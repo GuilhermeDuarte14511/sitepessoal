@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Guilherme Duarte - Desenvolvedor .NET</title>
+    <!-- Meta tag para Responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome para os ícones -->
@@ -41,38 +43,50 @@
         <div class="overlay"></div>
         <div class="code-background">
             <pre>
-               <!-- C# / .NET -->
-                public class Developer
-                {
-                    public string Name { get; set; } = "Guilherme Duarte";
-                    public string[] Skills { get; set; } = { "C#", ".NET", "Xamarin", "SQL", "JavaScript" };
-                    public void BuildSolution()
-                    {
-                        Console.WriteLine("Transformando ideias em soluções com .NET");
-                    }
-                }
+<!-- C# / .NET -->
+public class Developer
+{
+    public string Name { get; set; } = "Guilherme Duarte";
+    public string[] Skills { get; set; } = { "C#", ".NET", "Xamarin", "SQL", "JavaScript" };
+    public void BuildSolution()
+    {
+        Console.WriteLine("Transformando ideias em soluções com .NET");
+    }
+}
 
-                <!-- Entity Framework -->
-                using (var context = new MyDbContext())
-                {
-                    var users = context.Users.Where(u => u.IsActive).ToList();
-                }
+<!-- Entity Framework -->
+using (var context = new MyDbContext())
+{
+    var users = context.Users.Where(u => u.IsActive).ToList();
+}
 
-                <!-- AWS S3 Upload -->
-                using Amazon.S3;
-                using Amazon.S3.Transfer;
+<!-- AWS S3 Upload -->
+using Amazon.S3;
+using Amazon.S3.Transfer;
 
-                public async Task UploadFileAsync(string filePath)
-                {
-                    var fileTransferUtility = new TransferUtility(s3Client);
-                    await fileTransferUtility.UploadAsync(filePath, bucketName);
-                }
+public async Task UploadFileAsync(string filePath)
+{
+    var fileTransferUtility = new TransferUtility(s3Client);
+    await fileTransferUtility.UploadAsync(filePath, bucketName);
+}
 
-                <!-- JavaScript -->
-                function showMessage(message) {
-                    console.log(message);
-                }
-                showMessage('Bem-vindo ao meu portfólio!');
+<!-- JavaScript -->
+function showMessage(message) {
+    console.log(message);
+}
+showMessage('Bem-vindo ao meu portfólio!');
+
+<!-- HTML -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Exemplo</title>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+</body>
+</html>
             </pre>
         </div>
         <div class="container">
@@ -85,9 +99,8 @@
     <!-- Sobre Mim -->
     <section id="sobre" class="container">
         <h2 class="section-title animate-up">Sobre Mim</h2>
-        <a href="">
-            <img src="https://i.ibb.co/Ksc5n53/imagem-perfil.jpg" alt="Guilherme Duarte" class="profile-img animate-up" border="0" />
-        </a>                <p class="animate-up">
+        <img src="https://i.ibb.co/Ksc5n53/imagem-perfil.jpg" alt="Guilherme Duarte" class="img-fluid profile-img animate-up" />
+        <p class="animate-up">
             Olá, meu nome é Guilherme Duarte, tenho 23 anos e sou formado em Ciência da Computação pela faculdade Uninove. Com quase 4 anos de experiência em desenvolvimento, incluindo estágio e CLT, sou um Desenvolvedor .NET Pleno. Tenho vasta experiência em desenvolvimento com .NET 6 a 8, criação de queries e consultas a bancos de dados SQL, Salesforce, desenvolvimento front-end com HTML, CSS e JavaScript, e criação de aplicativos mobile utilizando Xamarin.
         </p>
         <p class="animate-up">
@@ -100,7 +113,7 @@
         <h2 class="section-title animate-up">Habilidades</h2>
         <div class="row text-center">
             <!-- Habilidades -->
-            <div class="col-md-4 animate-up">
+            <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fas fa-mobile-alt" title="Xamarin"></i>
@@ -109,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 animate-up">
+            <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fas fa-database" title="SQL Server"></i>
@@ -118,7 +131,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 animate-up">
+            <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fab fa-microsoft" title="C#/.NET"></i>
@@ -127,7 +140,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 animate-up">
+            <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fab fa-aws" title="AWS"></i>
@@ -136,7 +149,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 animate-up">
+            <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fab fa-html5" title="HTML, CSS & JavaScript"></i>
@@ -145,7 +158,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 animate-up">
+            <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fas fa-plug" title="APIs"></i>
