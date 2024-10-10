@@ -41,6 +41,7 @@
         <div class="overlay"></div>
         <div class="code-background">
             <pre>
+               <!-- C# / .NET -->
                 public class Developer
                 {
                     public string Name { get; set; } = "Guilherme Duarte";
@@ -50,6 +51,28 @@
                         Console.WriteLine("Transformando ideias em soluções com .NET");
                     }
                 }
+
+                <!-- Entity Framework -->
+                using (var context = new MyDbContext())
+                {
+                    var users = context.Users.Where(u => u.IsActive).ToList();
+                }
+
+                <!-- AWS S3 Upload -->
+                using Amazon.S3;
+                using Amazon.S3.Transfer;
+
+                public async Task UploadFileAsync(string filePath)
+                {
+                    var fileTransferUtility = new TransferUtility(s3Client);
+                    await fileTransferUtility.UploadAsync(filePath, bucketName);
+                }
+
+                <!-- JavaScript -->
+                function showMessage(message) {
+                    console.log(message);
+                }
+                showMessage('Bem-vindo ao meu portfólio!');
             </pre>
         </div>
         <div class="container">
