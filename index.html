@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Guilherme Duarte - Desenvolvedor .NET</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Animate.css para animações -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Guilherme Duarte</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="jumbotron">
+        <div class="overlay"></div>
+        <div class="code-background">
+            <pre>
+                public class Developer
+                {
+                    public string Name { get; set; } = "Guilherme Duarte";
+                    public string[] Skills { get; set; } = { "C#", ".NET", "Xamarin", "SQL", "JavaScript" };
+                    public void BuildSolution()
+                    {
+                        Console.WriteLine("Transformando ideias em soluções com .NET");
+                    }
+                }
+            </pre>
+        </div>
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Guilherme Duarte</h1>
+            <p class="animate__animated animate__fadeInUp">Transformando ideias em soluções com .NET</p>
+            <a href="#contato" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Entre em Contato</a>
+        </div>
+    </div>
+
+    <!-- Sobre Mim -->
+    <section id="sobre" class="container">
+        <h2 class="section-title animate-up">Sobre Mim</h2>
+        <a href="">
+            <img src="https://i.ibb.co/Ksc5n53/imagem-perfil.jpg" alt="Guilherme Duarte" class="profile-img animate-up" border="0" />
+        </a>                <p class="animate-up">
+            Olá, meu nome é Guilherme Duarte, tenho 23 anos e sou formado em Ciência da Computação pela faculdade Uninove. Com quase 4 anos de experiência em desenvolvimento, incluindo estágio e CLT, sou um Desenvolvedor .NET Pleno. Tenho vasta experiência em desenvolvimento com .NET 6 a 8, criação de queries e consultas a bancos de dados SQL, Salesforce, desenvolvimento front-end com HTML, CSS e JavaScript, e criação de aplicativos mobile utilizando Xamarin.
+        </p>
+        <p class="animate-up">
+            Minhas habilidades também incluem o desenvolvimento e integração de APIs, especialmente para formas de pagamento com webhooks, além de conhecimento em design patterns e testes unitários. Sou apaixonado por aprender novas tecnologias e estou sempre em busca de desafios que me permitam crescer profissionalmente e contribuir para o sucesso da empresa.
+        </p>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="container">
+        <h2 class="section-title animate-up">Habilidades</h2>
+        <div class="row text-center">
+            <!-- Habilidades -->
+            <div class="col-md-4 animate-up">
+                <div class="skills">
+                    <div class="skill-item">
+                        <i class="fas fa-mobile-alt" title="Xamarin"></i>
+                        <div class="skill-name">Xamarin</div>
+                        <p>Desenvolvimento de aplicações mobile avançadas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate-up">
+                <div class="skills">
+                    <div class="skill-item">
+                        <i class="fas fa-database" title="SQL Server"></i>
+                        <div class="skill-name">SQL Server</div>
+                        <p>Gestão e consulta de banco de dados.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate-up">
+                <div class="skills">
+                    <div class="skill-item">
+                        <i class="fab fa-microsoft" title="C#/.NET"></i>
+                        <div class="skill-name">C#/.NET</div>
+                        <p>Programação orientada a objetos e desenvolvimento backend.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate-up">
+                <div class="skills">
+                    <div class="skill-item">
+                        <i class="fab fa-aws" title="AWS"></i>
+                        <div class="skill-name">AWS</div>
+                        <p>Armazenamento em nuvem com AWS S3.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate-up">
+                <div class="skills">
+                    <div class="skill-item">
+                        <i class="fab fa-html5" title="HTML, CSS & JavaScript"></i>
+                        <div class="skill-name">HTML, CSS & JS</div>
+                        <p>Desenvolvimento front-end.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate-up">
+                <div class="skills">
+                    <div class="skill-item">
+                        <i class="fas fa-plug" title="APIs"></i>
+                        <div class="skill-name">APIs</div>
+                        <p>Desenvolvimento e integração de APIs, incluindo webhooks para transações Pix.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos Destacados -->
+    <section id="projetos" class="container">
+        <h2 class="section-title animate-up">Projetos</h2>
+        <div id="projectCarousel" class="carousel slide project-carousel animate-up" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Projeto 1 -->
+                <div class="carousel-item active">
+                    <div class="project-card">
+                        <h3>Gestão Oficina Mecânica</h3>
+                        <p style="text-align: left;">
+                            O Sistema de Gestão de Oficina Mecânica é uma solução completa para gerenciamento de oficinas. Permite a criação de perfis administrativos, geração de ordens de serviço, cadastro de clientes e veículos, gerenciamento de estoque e controle de serviços. O sistema envia notificações via SMS e e-mail sobre o status dos serviços, e oferece relatórios detalhados através do PowerBI. Também integra APIs para busca de CEP e orçamentos de serviços. Desenvolvido em .NET 8.
+                        </p>
+                        <!-- Barra de Progresso -->
+                        <div class="loading-bar">
+                            <div class="loading-progress" data-progress="25"></div>
+                            <span class="loading-text">25% Completo</span>
+                        </div>
+                        <div class="project-technologies">
+                            <div class="tech-item">
+                                <i class="fab fa-microsoft" title=".NET"></i>
+                                <div class="tech-name">.NET</div>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-database" title="SQL Server"></i>
+                                <div class="tech-name">SQL Server</div>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-html5" title="HTML"></i>
+                                <div class="tech-name">HTML</div>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-css3-alt" title="CSS"></i>
+                                <div class="tech-name">CSS</div>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-js" title="JavaScript"></i>
+                                <div class="tech-name">JavaScript</div>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-table" title="DataTables"></i>
+                                <div class="tech-name">DataTables</div>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-th" title="AG Grid"></i>
+                                <div class="tech-name">AG Grid</div>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-project-diagram" title="Entity Framework"></i>
+                                <div class="tech-name">Entity Framework</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <h3>Projeto 2</h3>
+                        <div class="coming-soon">
+                            <p>Em breve...</p>
+                            <div class="loading-bar">
+                                <div class="loading-progress" data-progress="50"></div>
+                                <span class="loading-text">50% Completo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="carousel-item">
+                    <div class="project-card">
+                        <h3>Projeto 3</h3>
+                        <div class="coming-soon">
+                            <p>Em breve...</p>
+                            <div class="loading-bar">
+                                <div class="loading-progress" data-progress="50"></div>
+                                <span class="loading-text">50% Completo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Controles do Carrossel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="container">
+        <h2 class="section-title animate-up">Contato</h2>
+        <div class="contact-icons animate-up">
+            <a href="https://api.whatsapp.com/send?phone=5511963516246" target="_blank"><i class="fab fa-whatsapp" title="WhatsApp" style="color: #25d366;"></i></a>
+            <a href="mailto:guilhermeduarte14511@gmail.com"><i class="fas fa-envelope" title="Email" style="color: #d44638;"></i></a>
+            <a href="https://www.linkedin.com/in/guilherme-duarte-2253b0154/" target="_blank"><i class="fab fa-linkedin" title="LinkedIn" style="color: #0077b5;"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Guilherme Duarte. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Customizado -->
+    <script src="script.js"></script>
+</body>
+</html>

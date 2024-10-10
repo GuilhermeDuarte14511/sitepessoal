@@ -1,0 +1,352 @@
+/* Estilos Customizados */
+:root {
+    --bg-color: #0e0e0e;
+    --primary-color: #0db9f0;
+    --secondary-color: #f0db4f;
+    --text-color: #ffffff;
+    --accent-color: #e91e63;
+    --progress-complete: #4caf50; /* Cor para barras completas */
+    --progress-incomplete: #ff9800; /* Cor para barras em progresso */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background-color: var(--bg-color);
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: var(--text-color);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.jumbotron {
+    position: relative;
+    background: #0e0e0e;
+    color: var(--text-color);
+    text-align: center;
+    padding: 100px 25px;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.jumbotron .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(-45deg, #0db9f0, #68217a, #f0db4f, #e91e63);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.jumbotron .container {
+    position: relative;
+    z-index: 3;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.section-title {
+    margin: 50px 0 30px;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.profile-img {
+    width: 200px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+    border: 5px solid var(--primary-color);
+}
+
+/* Estilos para o código de fundo na jumbotron */
+.code-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.code-background pre {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.1);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    animation: scrollCode 30s linear infinite;
+}
+
+@keyframes scrollCode {
+    from {
+        top: 100%;
+    }
+    to {
+        top: -100%;
+    }
+}
+
+.skills .skill-item {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.skills i {
+    font-size: 3em;
+}
+
+.skills .skill-name {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Cores dos ícones das habilidades */
+.skills i[title="C#/.NET"] {
+    color: #68217a;
+}
+
+.skills i[title="Xamarin"] {
+    color: #3498db;
+}
+
+.skills i[title="SQL Server"] {
+    color: #f29111;
+}
+
+.skills i[title="AWS"] {
+    color: #ff9900;
+}
+
+.skills i[title="HTML, CSS & JavaScript"] {
+    color: #e34c26;
+}
+
+.skills i[title="APIs"] {
+    color: #4caf50;
+}
+
+.contact-info a {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 25px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+}
+
+/* Animações Personalizadas */
+.animate-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para o Carrossel de Projetos */
+.project-carousel .carousel-item {
+    padding: 20px;
+}
+
+.project-card {
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.project-technologies {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.project-technologies .tech-item {
+    text-align: center;
+}
+
+.project-technologies i {
+    font-size: 2em;
+}
+
+.project-technologies .tech-name {
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: var(--text-color);
+}
+
+/* Cores dos ícones nos projetos */
+.project-technologies i[title=".NET"] {
+    color: #68217a;
+}
+
+.project-technologies i[title="SQL Server"] {
+    color: #f29111;
+}
+
+.project-technologies i[title="HTML"] {
+    color: #e34c26;
+}
+
+.project-technologies i[title="CSS"] {
+    color: #1572b6;
+}
+
+.project-technologies i[title="JavaScript"] {
+    color: #f7df1e;
+}
+
+.project-technologies i[title="DataTables"] {
+    color: #2a9d8f;
+}
+
+.project-technologies i[title="AG Grid"] {
+    color: #264653;
+}
+
+.project-technologies i[title="Entity Framework"] {
+    color: #6a5acd;
+}
+
+/* Estilos adicionais */
+/* Centralizar os ícones de contato */
+.contact-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-icons a {
+    font-size: 2em;
+    margin: 0 15px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.contact-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* Estilos para a seção "Em breve..." */
+.coming-soon {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.coming-soon p {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* Estilos para a barra de loading */
+.loading-bar {
+    position: relative;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 80%;
+    height: 20px;
+    margin: 20px auto 0;
+}
+
+.loading-progress {
+    height: 100%;
+    width: 0%;
+    animation: loadProgress 2s forwards;
+}
+
+.loading-text {
+    margin-top: 10px;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+/* Animação da barra de progresso */
+@keyframes loadProgress {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--progress-value);
+    }
+}
