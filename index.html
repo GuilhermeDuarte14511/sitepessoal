@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Carregando...</span>
+        </div>
+    </div>
+    
     <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
@@ -33,6 +40,11 @@
                     <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item">
+                        <button id="modeToggle" class="btn btn-link nav-link">
+                            <i class="fas fa-moon" id="modeIcon"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -43,50 +55,37 @@
         <div class="overlay"></div>
         <div class="code-background">
             <pre>
-<!-- C# / .NET -->
-public class Developer
-{
-    public string Name { get; set; } = "Guilherme Duarte";
-    public string[] Skills { get; set; } = { "C#", ".NET", "Xamarin", "SQL", "JavaScript" };
-    public void BuildSolution()
-    {
-        Console.WriteLine("Transformando ideias em soluções com .NET");
-    }
-}
-
-<!-- Entity Framework -->
-using (var context = new MyDbContext())
-{
-    var users = context.Users.Where(u => u.IsActive).ToList();
-}
-
-<!-- AWS S3 Upload -->
-using Amazon.S3;
-using Amazon.S3.Transfer;
-
-public async Task UploadFileAsync(string filePath)
-{
-    var fileTransferUtility = new TransferUtility(s3Client);
-    await fileTransferUtility.UploadAsync(filePath, bucketName);
-}
-
-<!-- JavaScript -->
-function showMessage(message) {
-    console.log(message);
-}
-showMessage('Bem-vindo ao meu portfólio!');
-
-<!-- HTML -->
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Projeto Exemplo</title>
-</head>
-<body>
-    <h1>Olá, Mundo!</h1>
-</body>
-</html>
+                public class Developer
+                {
+                    public string Name { get; set; } = "Guilherme Duarte";
+                    public string[] Skills { get; set; } = { "C#", ".NET", "Xamarin", "SQL", "JavaScript" };
+                    public void BuildSolution()
+                    {
+                        Console.WriteLine("Transformando ideias em soluções com .NET");
+                    }
+                }
+                
+                <!-- Entity Framework -->
+                using (var context = new MyDbContext())
+                {
+                    var users = context.Users.Where(u => u.IsActive).ToList();
+                }
+                
+                <!-- AWS S3 Upload -->
+                using Amazon.S3;
+                using Amazon.S3.Transfer;
+                
+                public async Task UploadFileAsync(string filePath)
+                {
+                    var fileTransferUtility = new TransferUtility(s3Client);
+                    await fileTransferUtility.UploadAsync(filePath, bucketName);
+                }
+                
+                <!-- JavaScript -->
+                function showMessage(message) {
+                    console.log(message);
+                }
+                showMessage('Bem-vindo ao meu portfólio!');
             </pre>
         </div>
         <div class="container">
@@ -112,58 +111,105 @@ showMessage('Bem-vindo ao meu portfólio!');
     <section id="habilidades" class="container">
         <h2 class="section-title animate-up">Habilidades</h2>
         <div class="row text-center">
-            <!-- Habilidades -->
+            <!-- Xamarin -->
             <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fas fa-mobile-alt" title="Xamarin"></i>
                         <div class="skill-name">Xamarin</div>
                         <p>Desenvolvimento de aplicações mobile avançadas.</p>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- SQL Server -->
             <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fas fa-database" title="SQL Server"></i>
                         <div class="skill-name">SQL Server</div>
                         <p>Gestão e consulta de banco de dados.</p>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- C#/.NET -->
             <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fab fa-microsoft" title="C#/.NET"></i>
                         <div class="skill-name">C#/.NET</div>
                         <p>Programação orientada a objetos e desenvolvimento backend.</p>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- AWS -->
             <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fab fa-aws" title="AWS"></i>
                         <div class="skill-name">AWS</div>
                         <p>Armazenamento em nuvem com AWS S3.</p>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- HTML, CSS & JavaScript -->
             <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fab fa-html5" title="HTML, CSS & JavaScript"></i>
                         <div class="skill-name">HTML, CSS & JS</div>
                         <p>Desenvolvimento front-end.</p>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- APIs -->
             <div class="col-md-4 col-sm-6 animate-up">
                 <div class="skills">
                     <div class="skill-item">
                         <i class="fas fa-plug" title="APIs"></i>
                         <div class="skill-name">APIs</div>
                         <p>Desenvolvimento e integração de APIs, incluindo webhooks para transações Pix.</p>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -182,7 +228,6 @@ showMessage('Bem-vindo ao meu portfólio!');
                         <p style="text-align: left;">
                             O Sistema de Gestão de Oficina Mecânica é uma solução completa para gerenciamento de oficinas. Permite a criação de perfis administrativos, geração de ordens de serviço, cadastro de clientes e veículos, gerenciamento de estoque e controle de serviços. O sistema envia notificações via SMS e e-mail sobre o status dos serviços, e oferece relatórios detalhados através do PowerBI. Também integra APIs para busca de CEP e orçamentos de serviços. Desenvolvido em .NET 8.
                         </p>
-                        <!-- Barra de Progresso -->
                         <div class="loading-bar">
                             <div class="loading-progress" data-progress="25"></div>
                             <span class="loading-text">25% Completo</span>
@@ -250,7 +295,6 @@ showMessage('Bem-vindo ao meu portfólio!');
                     </div>
                 </div>
             </div>
-            <!-- Controles do Carrossel -->
             <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
