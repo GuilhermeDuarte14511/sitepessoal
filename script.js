@@ -95,3 +95,18 @@ document.body.classList.add('transition');
 setTimeout(function() {
     document.body.classList.remove('transition');
 }, 300); // Remove a classe após a transição inicial
+
+// Modal para exibição de imagens ampliadas
+document.querySelectorAll('.image-link').forEach(function(element) {
+    element.addEventListener('click', function(event) {
+        event.preventDefault();
+        const imageSrc = this.getAttribute('data-image');
+        const imageTitle = this.getAttribute('data-title');
+
+        document.getElementById('imageModalSrc').setAttribute('src', imageSrc);
+        document.getElementById('imageModalLabel').innerText = imageTitle;
+        
+        const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+        modal.show();
+    });
+});

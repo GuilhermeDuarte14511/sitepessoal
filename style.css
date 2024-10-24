@@ -513,3 +513,37 @@ body:not(.dark-mode) .contact-icons a {
     color: #ffffff; /* Cor do texto e ícones no modo claro */
 }
 
+/* Estilos do Modal */
+.modal-content {
+    background-color: var(--bg-color); /* Cor de fundo do modal */
+    color: var(--text-color); /* Cor do texto do modal */
+    border-radius: 10px;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-img {
+    width: 100%; /* Forçando a imagem a ocupar toda a largura */
+    max-width: 1200px; /* Definindo o máximo de largura */
+    height: auto; /* Mantendo a proporção */
+}
+
+body.dark-mode .modal-content {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode .modal-header {
+    border-bottom: 1px solid #000000;
+}
+
+body.dark-mode .modal-title {
+    color: #000000;
+}
+
+
