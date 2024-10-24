@@ -360,6 +360,19 @@ footer {
     color: #6a5acd;
 }
 
+.project-technologies i[title="Bootstrap"] {
+    color: #7952B3; /* Cor oficial do Bootstrap */
+}
+
+.project-technologies i[title="SendGrid"] {
+    color: #00BFFF; /* Cor oficial do SendGrid */
+}
+
+.project-technologies i[title="Clean Architecture"] {
+    color: #6C757D; /* Cor neutra sugerida para Clean Architecture */
+}
+
+
 /* Centralizar os ícones de contato */
 .contact-icons {
     text-align: center;
