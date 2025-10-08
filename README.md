@@ -40,6 +40,6 @@ sitepessoal/
 
 - **E-mail**: guilhermeduarte14511@gmail.com
 - **LinkedIn**: https://www.linkedin.com/in/guilherme-duarte-2253b0154/
-- **WhatsApp**: https://api.whatsapp.com/send?phone=5511963516246
+- **WhatsApp**: https://api.whatsapp.com/send?phone=5511999070180
 
 Sinta-se a vontade para conectar e conversar sobre novos desafios em .NET, integracoes financeiras e solucoes full stack.
