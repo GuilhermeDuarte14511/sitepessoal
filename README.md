@@ -1,69 +1,45 @@
-# Guilherme Duarte - Desenvolvedor .NET
+# Guilherme Duarte - Portfolio .NET
 
-Bem-vindo ao meu portfólio pessoal! Este projeto foi desenvolvido para demonstrar minhas habilidades em desenvolvimento web utilizando tecnologias como HTML, CSS e JavaScript, com foco especial em .NET e C#.
+Portfolio pessoal que apresenta minha atuacao como desenvolvedor .NET pleno, incluindo experiencias recentes com microservices financeiros, integracoes bancarias e entrega continua em ambientes cloud.
 
-## 📖 Sobre o Projeto
+## Visao Geral
 
-Este site é uma representação interativa do meu percurso profissional, habilidades e projetos nos quais tenho trabalhado. Com um design moderno e responsivo, ele oferece uma experiência de usuário agradável e informativa.
+O site foi reformulado para proporcionar uma experiencia moderna, tecnologica e responsiva:
 
-## 🚀 Funcionalidades
+- Hero dinamico com efeito typewriter, chips de especialidades e card de codigo simulando servicos financeiros em .NET.
+- Secoes de Sobre, Experiencia e Stack destacando Clean Architecture, DDD, mensageria com RabbitMQ e DevOps em AWS/Azure.
+- Linha do tempo com detalhes das passagens aonde trabalhei.
+- Galeria de projetos que reforca entregas em pagamentos, APIs e aplicativos mobile.
+- Painel de contato direto com WhatsApp, e-mail e LinkedIn.
 
-- **Animação Personalizada na Jumbotron:** Uma animação de código C# rolando em segundo plano, destacando minha especialização em .NET.
-- **Seções Informativas:**
-  - **Sobre Mim:** Informações detalhadas sobre minha formação e experiência.
-  - **Habilidades:** Apresentação das minhas principais habilidades técnicas com ícones representativos.
-  - **Projetos:** Exibição de projetos com descrições, tecnologias utilizadas e barras de progresso animadas indicando o status de conclusão.
-  - **Contato:** Links diretos para minhas redes sociais e formas de contato.
-- **Animações Suaves:** Uso de bibliotecas como Animate.css para transições e animações que enriquecem a experiência do usuário.
-- **Design Responsivo:** Layout adaptável para diversos dispositivos, garantindo acessibilidade em smartphones, tablets e desktops.
+## Tecnologias
 
-## 🛠️ Tecnologias Utilizadas
+- **HTML5** + estrutura em secoes semanticas.
+- **CSS3** com glassmorphism, animacoes suavizadas, grid/flex responsivo e suporte a modo claro.
+- **JavaScript** vanilla para ScrollSpy, Intersection Observer, tema persistente, marquee infinito e efeito typewriter.
+- **Bootstrap 5** para base responsiva e componentes utilitarios.
+- **Font Awesome 6** para icones.
+- **Google Fonts**: Space Grotesk e Fira Code.
 
-- **HTML5**
-- **CSS3**
-  - Variáveis CSS para fácil manutenção e personalização.
-  - Flexbox e Grid para layout responsivo.
-- **JavaScript**
-  - Manipulação do DOM para animações e interatividade.
-- **Bootstrap 5**
-  - Sistema de grid e componentes pré-estilizados.
-- **Font Awesome**
-  - Ícones representativos para habilidades e tecnologias.
-- **Animate.css**
-  - Animações pré-definidas para elementos ao rolar a página.
-- **Google Fonts**
-  - Tipografia personalizada para melhor legibilidade.
+## Estrutura
 
-## 🎯 Objetivos do Projeto
+```
+sitepessoal/
++-- index.html   # Pagina principal com as secoes do portfolio
++-- style.css    # Tema, layout, animacoes e modo claro/escuro
++-- script.js    # Interatividade, animacoes, tema e efeitos visuais
+```
 
-- **Demonstração de Habilidades:** Mostrar proficiência em desenvolvimento front-end e back-end.
-- **Interatividade:** Proporcionar uma experiência dinâmica e envolvente para o visitante.
-- **Atualização Constante:** Espaço para adicionar novos projetos e atualizações futuras.
+## Como Executar
 
-## 📂 Estrutura do Projeto
+1. Clone ou baixe este repositorio.
+2. Certifique-se de manter `index.html`, `style.css` e `script.js` no mesmo diretorio.
+3. Abra `index.html` em qualquer navegador moderno.
 
-- **index.html:** Estrutura principal do site com todas as seções.
-- **style.css:** Estilos customizados, incluindo animações e responsividade.
-- **script.js:** Scripts para interatividade e animações ao rolar a página.
-- **Imagens e Recursos:** Inclui a imagem de perfil e quaisquer outros recursos visuais utilizados.
+## Contato
 
-## 🔧 Como Executar o Projeto
+- **E-mail**: guilhermeduarte14511@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/guilherme-duarte-2253b0154/
+- **WhatsApp**: https://api.whatsapp.com/send?phone=5511963516246
 
-1. **Clone ou Faça o Download:**
-   - Clone o repositório ou faça o download dos arquivos do projeto.
-2. **Organize os Arquivos:**
-   - Certifique-se de que `index.html`, `style.css` e `script.js` estão no mesmo diretório.
-3. **Abra no Navegador:**
-   - Abra o arquivo `index.html` em seu navegador preferido.
-
-## 📞 Contato
-
-Estou aberto a oportunidades e colaborações! Sinta-se à vontade para entrar em contato comigo através dos seguintes meios:
-
-- **Email:** [guilhermeduarte14511@gmail.com](mailto:guilhermeduarte14511@gmail.com)
-- **LinkedIn:** [linkedin.com/in/guilherme-duarte-2253b0154](https://www.linkedin.com/in/guilherme-duarte-2253b0154/)
-- **WhatsApp:** [+55 11 96351-6246](https://api.whatsapp.com/send?phone=5511963516246)
-
-## 📜 Licença
-
-Este projeto é de código aberto e está licenciado sob os termos da [MIT License](LICENSE).
+Sinta-se a vontade para conectar e conversar sobre novos desafios em .NET, integracoes financeiras e solucoes full stack.
