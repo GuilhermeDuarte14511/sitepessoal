@@ -7,6 +7,10 @@ const body = document.body;
 const modeToggle = document.getElementById('modeToggle');
 const modeIcon = document.getElementById('modeIcon');
 const languageButtons = document.querySelectorAll('.lang-btn');
+const chatWidget = document.getElementById('chatWidget');
+const chatToggle = chatWidget ? chatWidget.querySelector('[data-chat-toggle]') : null;
+const chatPanel = chatWidget ? chatWidget.querySelector('[data-chat-panel]') : null;
+const chatClose = chatWidget ? chatWidget.querySelector('[data-chat-close]') : null;
 let currentLanguage = 'pt';
 let typewriterTimeout;
 
@@ -263,6 +267,28 @@ const translations = {
     }
 };
 
+Object.assign(translations.pt.strings, {
+    'chat.toggle': 'Converse comigo',
+    'chat.title': 'Converse comigo',
+    'chat.description': 'Escolha o canal que preferir para iniciar uma conversa.',
+    'chat.whatsapp': 'Chamar no WhatsApp',
+    'chat.email': 'Enviar e-mail',
+    'chat.close': 'Fechar conversa',
+    'chat.toggleOpen': 'Abrir conversa',
+    'chat.toggleClose': 'Fechar conversa'
+});
+
+Object.assign(translations.en.strings, {
+    'chat.toggle': 'Chat with me',
+    'chat.title': 'Chat with me',
+    'chat.description': 'Pick the channel you prefer to start a conversation.',
+    'chat.whatsapp': 'Message on WhatsApp',
+    'chat.email': 'Send email',
+    'chat.close': 'Close chat',
+    'chat.toggleOpen': 'Open chat',
+    'chat.toggleClose': 'Close chat'
+});
+
 function updateModeIcon() {
     if (!modeIcon) {
         return;
@@ -306,6 +332,21 @@ function updateLanguageButtons(lang) {
         button.classList.toggle('active', isActive);
         button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
+}
+
+function updateChatToggleLabel() {
+    if (!chatToggle || !chatWidget) {
+        return;
+    }
+
+    const dictionary = translations[currentLanguage]?.strings || {};
+    const isOpen = chatWidget.classList.contains('chat-widget--open');
+    const openLabel = dictionary['chat.toggleOpen'] || chatToggle.dataset.openLabel || 'Abrir conversa';
+    const closeLabel = dictionary['chat.toggleClose'] || chatToggle.dataset.closeLabel || 'Fechar conversa';
+
+    chatToggle.dataset.openLabel = openLabel;
+    chatToggle.dataset.closeLabel = closeLabel;
+    chatToggle.setAttribute('aria-label', isOpen ? closeLabel : openLabel);
 }
 
 function startTypewriter() {
@@ -370,6 +411,7 @@ function setLanguage(lang) {
     applyTranslations(lang);
     updateLanguageButtons(lang);
     startTypewriter();
+    updateChatToggleLabel();
 }
 
 (function initialiseTheme() {
@@ -408,6 +450,50 @@ navLinks.forEach(link => {
         }
     });
 });
+
+if (chatWidget && chatToggle && chatPanel) {
+    const setChatOpen = (open, { manageFocus = true } = {}) => {
+        chatWidget.classList.toggle('chat-widget--open', open);
+        chatPanel.hidden = !open;
+        chatPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+        chatToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        updateChatToggleLabel();
+        if (open) {
+            if (manageFocus && chatClose) {
+                chatClose.focus();
+            }
+        } else {
+            if (manageFocus) {
+                chatToggle.focus();
+            }
+        }
+    };
+
+    chatToggle.addEventListener('click', () => {
+        const isOpen = chatWidget.classList.contains('chat-widget--open');
+        setChatOpen(!isOpen);
+    });
+
+    if (chatClose) {
+        chatClose.addEventListener('click', () => setChatOpen(false));
+    }
+
+    chatPanel.querySelectorAll('.chat-action').forEach(action => {
+        action.addEventListener('click', () => setChatOpen(false, { manageFocus: false }));
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!chatWidget.contains(event.target) && chatWidget.classList.contains('chat-widget--open')) {
+            setChatOpen(false, { manageFocus: false });
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && chatWidget.classList.contains('chat-widget--open')) {
+            setChatOpen(false);
+        }
+    });
+}
 
 const animatedElements = document.querySelectorAll('[data-animate]');
 if (animatedElements.length) {
