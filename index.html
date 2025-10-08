@@ -3,57 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Guilherme Duarte - Desenvolvedor .NET</title>
-    <!-- Meta tag para Responsividade -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RQ2NQEZMG"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-3RQ2NQEZMG');
     </script>
-    
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome para os ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!-- Animate.css para animações -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoE0Poa3BC3i1nUrBc9c3JZJ74dYw6+YJ0e2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Estilos Customizados -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
-    <!-- Loader -->
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
     <div class="loader" id="loader">
         <div class="spinner-border text-light" role="status">
             <span class="visually-hidden">Carregando...</span>
         </div>
     </div>
-    
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+    <div class="grid-overlay"></div>
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top blur-surface">
         <div class="container">
-            <a class="navbar-brand" href="#">Guilherme Duarte</a>
+            <a class="navbar-brand" href="#intro">Guilherme Duarte</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Alternar navegação">
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Alternar navega&ccedil;&atilde;o">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#intro">In&iacute;cio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experi&ecirc;ncia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stack">Stack</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
                     <li class="nav-item">
-                        <button id="modeToggle" class="btn btn-link nav-link">
-                            <i class="fas fa-moon" id="modeIcon"></i>
+                        <button id="modeToggle" class="btn btn-link nav-link" aria-label="Alternar tema">
+                            <i class="fas fa-sun" id="modeIcon"></i>
                         </button>
                     </li>
                 </ul>
@@ -61,379 +53,357 @@
         </div>
     </nav>
 
-    <!-- Banner -->
-    <div class="jumbotron">
-        <div class="overlay"></div>
-        <div class="code-background">
-            <pre>
-                public class Developer
-                {
-                    public string Name { get; set; } = "Guilherme Duarte";
-                    public string[] Skills { get; set; } = { "C#", ".NET", "Xamarin", "SQL", "JavaScript" };
-                    public void BuildSolution()
-                    {
-                        Console.WriteLine("Transformando ideias em soluções com .NET");
-                    }
-                }
-                
-                <!-- Entity Framework -->
-                using (var context = new MyDbContext())
-                {
-                    var users = context.Users.Where(u => u.IsActive).ToList();
-                }
-                
-                <!-- AWS S3 Upload -->
-                using Amazon.S3;
-                using Amazon.S3.Transfer;
-                
-                public async Task UploadFileAsync(string filePath)
-                {
-                    var fileTransferUtility = new TransferUtility(s3Client);
-                    await fileTransferUtility.UploadAsync(filePath, bucketName);
-                }
-                
-                <!-- JavaScript -->
-                function showMessage(message) {
-                    console.log(message);
-                }
-                showMessage('Bem-vindo ao meu portfólio!');
-            </pre>
-        </div>
-        <div class="container">
-            <h1 class="animate__animated animate__fadeInDown">Guilherme Duarte</h1>
-            <p class="animate__animated animate__fadeInUp">Transformando ideias em soluções com .NET</p>
-            <a href="#contato" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Entre em Contato</a>
-        </div>
-    </div>
-
-    <!-- Sobre Mim -->
-    <section id="sobre" class="container">
-        <h2 class="section-title animate-up">Sobre Mim</h2>
-        <img src="https://i.ibb.co/Ksc5n53/imagem-perfil.jpg" alt="Guilherme Duarte" class="img-fluid profile-img animate-up" />
-        <p class="animate-up">
-            Olá, meu nome é Guilherme Duarte, tenho 23 anos e sou formado em Ciência da Computação pela faculdade Uninove. Com quase 4 anos de experiência em desenvolvimento, incluindo estágio e CLT, sou um Desenvolvedor .NET Pleno. Tenho vasta experiência em desenvolvimento com .NET 6 a 8, criação de queries e consultas a bancos de dados SQL, Salesforce, desenvolvimento front-end com HTML, CSS e JavaScript, e criação de aplicativos mobile utilizando Xamarin.
-        </p>
-        <p class="animate-up">
-            Minhas habilidades também incluem o desenvolvimento e integração de APIs, especialmente para formas de pagamento com webhooks, além de conhecimento em design patterns e testes unitários. Sou apaixonado por aprender novas tecnologias e estou sempre em busca de desafios que me permitam crescer profissionalmente e contribuir para o sucesso da empresa.
-        </p>
-    </section>
-
-    <!-- Habilidades -->
-    <section id="habilidades" class="container">
-        <h2 class="section-title animate-up">Habilidades</h2>
-        <div class="row text-center">
-            <!-- Xamarin -->
-            <div class="col-md-4 col-sm-6 animate-up">
-                <div class="skills">
-                    <div class="skill-item">
-                        <i class="fas fa-mobile-alt" title="Xamarin"></i>
-                        <div class="skill-name">Xamarin</div>
-                        <p>Desenvolvimento de aplicações mobile avançadas.</p>
-                        <div class="skill-level">
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- SQL Server -->
-            <div class="col-md-4 col-sm-6 animate-up">
-                <div class="skills">
-                    <div class="skill-item">
-                        <i class="fas fa-database" title="SQL Server"></i>
-                        <div class="skill-name">SQL Server</div>
-                        <p>Gestão e consulta de banco de dados.</p>
-                        <div class="skill-level">
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- C#/.NET -->
-            <div class="col-md-4 col-sm-6 animate-up">
-                <div class="skills">
-                    <div class="skill-item">
-                        <i class="fab fa-microsoft" title="C#/.NET"></i>
-                        <div class="skill-name">C#/.NET</div>
-                        <p>Programação orientada a objetos e desenvolvimento backend.</p>
-                        <div class="skill-level">
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- AWS -->
-            <div class="col-md-4 col-sm-6 animate-up">
-                <div class="skills">
-                    <div class="skill-item">
-                        <i class="fab fa-aws" title="AWS"></i>
-                        <div class="skill-name">AWS</div>
-                        <p>Armazenamento em nuvem com AWS S3.</p>
-                        <div class="skill-level">
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- HTML, CSS & JavaScript -->
-            <div class="col-md-4 col-sm-6 animate-up">
-                <div class="skills">
-                    <div class="skill-item">
-                        <i class="fab fa-html5" title="HTML, CSS & JavaScript"></i>
-                        <div class="skill-name">HTML, CSS & JS</div>
-                        <p>Desenvolvimento front-end.</p>
-                        <div class="skill-level">
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- APIs -->
-            <div class="col-md-4 col-sm-6 animate-up">
-                <div class="skills">
-                    <div class="skill-item">
-                        <i class="fas fa-plug" title="APIs"></i>
-                        <div class="skill-name">APIs</div>
-                        <p>Desenvolvimento e integração de APIs, incluindo webhooks para transações Pix.</p>
-                        <div class="skill-level">
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot filled"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projetos Destacados -->
-    <section id="projetos" class="container">
-        <h2 class="section-title animate-up">Projetos</h2>
-        <div id="projectCarousel" class="carousel slide project-carousel animate-up" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Projeto 1 - Sistema de Agendamentos para Barbearia -->
-                <div class="carousel-item active">
-                    <div class="project-card">
-                        <h3>Sistema de Agendamentos para Barbearia</h3>
-                        <p style="text-align: left;">
-                            Este projeto é um sistema de agendamentos desenvolvido para uma barbearia, permitindo que os usuários façam login utilizando seu email ou número de telefone. O sistema fornece um painel completo, onde os clientes podem visualizar seu histórico de serviços ou agendar novos. As funcionalidades incluem a seleção de serviços, escolha de barbeiros, visualização de horários disponíveis e um resumo detalhado com confirmação via email tanto para o cliente quanto para o barbeiro.
+    <main>
+        <section id="intro" class="hero section-padding">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7" data-animate="fade-up">
+                        <span class="hero-eyebrow">Desenvolvedor .NET Pleno</span>
+                        <h1 class="hero-title">Guilherme Duarte</h1>
+                        <p class="hero-lead">
+                            Especialista em arquiteturas modernas com .NET 6/8/9, construindo APIs resilientes, microservices financeiros e experi&ecirc;ncias full stack escal&aacute;veis.
                         </p>
-                        <ul>
-                            <li><strong>Login simplificado:</strong> Acesso rápido ao sistema utilizando seu email ou número de telefone.</li>
-                            <li><strong>Cadastro fácil:</strong> Agora, novos usuários podem se registrar diretamente no sistema com um simples formulário de cadastro.</li>
-                            <li><strong>Código de verificação por email:</strong> Aumente sua segurança com um código de verificação enviado para seu email durante o login ou cadastro.</li>
-                            <li><strong>Histórico de serviços:</strong> Visualização detalhada de todos os serviços realizados, incluindo valor total, barbeiro responsável e status do agendamento.</li>
-                            <li><strong>Gerenciamento de serviços:</strong> Facilidade para selecionar, adicionar ou remover serviços do seu carrinho de agendamentos.</li>
-                            <li><strong>Escolha de barbeiro:</strong> Opção de selecionar seu barbeiro favorito, com horários disponíveis baseados na duração dos serviços escolhidos.</li>
-                            <li><strong>Confirmação de agendamento:</strong> Receba um email com todos os detalhes do seu agendamento, incluindo um resumo completo para você e para o barbeiro.</li>
-                        </ul>                        
-                        <a href="https://projetobarbearia-h5ezgbc3cdexbpcn.brazilsouth-01.azurewebsites.net/" target="_blank" class="btn btn-primary mt-3">Clique aqui para acessar o projeto</a>
-                        <div class="row mt-4">
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/sVvJNZ2/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net.png" data-title="Tela de Login">
-                                    <img src="https://i.ibb.co/sVvJNZ2/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net.png" alt="Tela de Login" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela de Login</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/qxZ9VcX/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Menu-Principal.png" data-title="Tela Inicial - Ver Histórico ou Agendar">
-                                    <img src="https://i.ibb.co/qxZ9VcX/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Menu-Principal.png" alt="Tela Inicial" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela Inicial - Ver Histórico ou Agendar</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/1dFvk8T/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Historico.png" data-title="Tela de Histórico">
-                                    <img src="https://i.ibb.co/1dFvk8T/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Historico.png" alt="Tela de Histórico" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela de Histórico</p>
-                            </div>
+                        <div class="hero-typed" aria-live="polite">
+                            <span class="typed-prefix">&lt;code&gt;</span>
+                            <span id="typed-text"></span>
+                            <span class="cursor">_</span>
+                            <span class="typed-suffix">&lt;/code&gt;</span>
                         </div>
-                        
-                        <div class="row mt-4">
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/wrm7x5h/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Solicitar-Servico.png" data-title="Tela Seleção de Serviços">
-                                    <img src="https://i.ibb.co/wrm7x5h/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Solicitar-Servico.png" alt="Tela Seleção de Serviços" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela Seleção de Serviços</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/KyCdpSj/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Escolher-Barbeiro-duracao.png" data-title="Tela Escolha de Barbeiro">
-                                    <img src="https://i.ibb.co/KyCdpSj/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Escolher-Barbeiro-duracao.png" alt="Tela Escolha de Barbeiro" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela Escolha de Barbeiro</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/7Vwx6sZ/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Escolher-Barbeiro-duracao.png" data-title="Tela Seleção de Horários">
-                                    <img src="https://i.ibb.co/7Vwx6sZ/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Escolher-Barbeiro-duracao.png" alt="Tela Seleção de Horários" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela Seleção de Horários</p>
-                            </div>
+                        <div class="hero-chips">
+                            <span class="chip">Clean Architecture</span>
+                            <span class="chip">DDD</span>
+                            <span class="chip">RabbitMQ</span>
+                            <span class="chip">AWS &amp; Azure</span>
+                            <span class="chip">CI/CD</span>
+                            <span class="chip">Xamarin</span>
                         </div>
-                        
-                        <div class="row mt-4">
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/6n5f7jW/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Resumo-Agendamento-barbei.png" data-title="Tela de Resumo de Agendamento">
-                                    <img src="https://i.ibb.co/6n5f7jW/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Resumo-Agendamento-barbei.png" alt="Tela de Resumo de Agendamento" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela de Resumo de Agendamento</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/K6BNpcM/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Resumo-Agendamento-barbei.png" data-title="Tela de Confirmação de Agendamento">
-                                    <img src="https://i.ibb.co/K6BNpcM/projetobarbearia-h5ezgbc3cdexbpcn-brazilsouth-01-azurewebsites-net-Cliente-Resumo-Agendamento-barbei.png" alt="Tela de Confirmação" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela de Confirmação de Agendamento</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/KxSQG4Q/Codigo-Verificacao.png" data-title="Tela de Código de Verificação">
-                                    <img src="https://i.ibb.co/KxSQG4Q/Codigo-Verificacao.png" alt="Tela de Código de Verificação" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela de Código de Verificação</p>
-                            </div>
+                        <div class="hero-cta">
+                            <a href="#contact" class="btn btn-primary btn-lg"><i class="fas fa-comments"></i> Vamos conversar</a>
+                            <a href="https://www.linkedin.com/in/guilherme-duarte-2253b0154/" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg"><i class="fab fa-linkedin"></i> LinkedIn</a>
                         </div>
-                        <div class="row mt-4">
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/ZJrKhqZ/Cadastro.png" data-title="Tela de Cadastro">
-                                    <img src="https://i.ibb.co/ZJrKhqZ/Cadastro.png" alt="Tela de Cadastro" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela de Cadastro</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="image-link" data-image="https://i.ibb.co/t3DSCbj/Novos-usuarios.png" data-title="Tela de Novos Usuários">
-                                    <img src="https://i.ibb.co/t3DSCbj/Novos-usuarios.png" alt="Tela de Novos Usuários" class="img-fluid rounded">
-                                </a>
-                                <p class="mt-2 text-center">Tela de Novos Usuários</p>
-                            </div>
-                        </div>                        
-                        <div class="project-technologies mt-4">
-                            <div class="tech-item">
-                                <i class="fab fa-microsoft" title=".NET"></i>
-                                <div class="tech-name">.NET</div>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fas fa-database" title="SQL Server"></i>
-                                <div class="tech-name">Azure SQL</div>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-html5" title="HTML"></i>
-                                <div class="tech-name">HTML</div>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-css3-alt" title="CSS"></i>
-                                <div class="tech-name">CSS</div>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-bootstrap" title="Bootstrap"></i>
-                                <div class="tech-name">Bootstrap</div>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fas fa-envelope" title="SendGrid"></i>
-                                <div class="tech-name">SendGrid</div>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fas fa-project-diagram" title="Clean Architecture"></i>
-                                <div class="tech-name">Clean Architecture</div>
-                            </div>
-                            <div class="loading-bar">
-                                <div class="loading-progress" data-progress="35"></div>
-                                <span class="loading-text">35% Completo</span>
-                            </div>
+                        <div class="hero-highlights">
+                            <article class="highlight-card">
+                                <i class="fas fa-diagram-project"></i>
+                                <div>
+                                    <h3>Microservices Financeiros</h3>
+                                    <p>Processos de Pix, boletos, payment requests e barramentos de limite com integra&ccedil;&otilde;es de alto impacto.</p>
+                                </div>
+                            </article>
+                            <article class="highlight-card">
+                                <i class="fas fa-cloud"></i>
+                                <div>
+                                    <h3>Cloud Native</h3>
+                                    <p>Orquestra&ccedil;&atilde;o em AWS S3/SQS/DynamoDB e Azure Service Bus com pipelines Azure DevOps, Docker, Helm e Kubernetes.</p>
+                                </div>
+                            </article>
                         </div>
                     </div>
-                </div>
-                <!-- Projeto 2 -->
-                <div class="carousel-item">
-                    <div class="project-card">
-                        <h3>Projeto 2</h3>
-                        <div class="coming-soon">
-                            <p>Em breve...</p>
-                            <div class="loading-bar">
-                                <div class="loading-progress" data-progress="50"></div>
-                                <span class="loading-text">50% Completo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Projeto 3 -->
-                <div class="carousel-item">
-                    <div class="project-card">
-                        <h3>Projeto 3</h3>
-                        <div class="coming-soon">
-                            <p>Em breve...</p>
-                            <div class="loading-bar">
-                                <div class="loading-progress" data-progress="50"></div>
-                                <span class="loading-text">50% Completo</span>
-                            </div>
+                    <div class="col-lg-5" data-animate="fade-left">
+                        <div class="code-preview">
+                            <header><span></span><span></span><span></span></header>
+<pre><code>public class VertemPaymentsService
+{
+    private readonly IMessageBus bus;
+    private readonly ISettlementGateway gateway;
+
+    public VertemPaymentsService(IMessageBus bus, ISettlementGateway gateway)
+    {
+        this.bus = bus;
+        this.gateway = gateway;
+    }
+
+    public async Task&lt;Result&gt; ExecutePixAsync(PixRequest request)
+    {
+        await bus.PublishAsync(new PaymentInitiated(request));
+        var approval = await gateway.ValidateLimitAsync(request);
+        return approval.IsApproved
+            ? Result.Success()
+            : Result.Fail("L&iacute;mite insuficiente");
+    }
+}</code></pre>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Próximo</span>
-            </button>
+        </section>
+
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5" data-animate="fade-up">
+                        <div class="profile-card">
+                            <img src="https://media.licdn.com/dms/image/v2/D4E03AQHCVATo4V35fQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1677787728405?e=1762992000&v=beta&t=cn3ZSXgXR2x6O3iq3IgWd4B29UWs6MLwVVNoJYBj6TE" alt="Retrato de Guilherme Duarte" class="profile-photo">
+                            <div class="profile-bio">
+                                <h2>Sobre Mim</h2>
+                                <p>24 anos, Bacharel em Ci&ecirc;ncia da Computa&ccedil;&atilde;o (UNINOVE) e desenvolvedor full stack focado em performance, seguran&ccedil;a e entrega cont&iacute;nua.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7" data-animate="fade-up" data-animate-delay="150">
+                        <div class="about-grid">
+                            <p>
+                                Ao longo da minha jornada constru&iacute; APIs RESTful, barramentos financeiros e plataformas completas usando C#, ASP.NET MVC/Web API, Entity Framework e padr&otilde;es como Clean Architecture e DDD. Gosto de desafiar limites de integra&ccedil;&atilde;o entre sistemas, garantindo escalabilidade e observabilidade.
+                            </p>
+                            <p>
+                                Domino o ciclo completo de um produto: da modelagem e persist&ecirc;ncia de dados (SQL Server, PostgreSQL, MongoDB, DynamoDB) ao front-end responsivo com HTML, CSS, JavaScript, Bootstrap, jQuery e Ajax.
+                            </p>
+                            <p>
+                                Em mobilidade, atuo com Xamarin, entregando experi&ecirc;ncias integradas com autentica&ccedil;&atilde;o, sincroniza&ccedil;&atilde;o e consumo de APIs. Em cloud, vivencio AWS e Azure com pipelines CI/CD e containers preparados para Kubernetes.
+                            </p>
+                        </div>
+                        <div class="about-tags">
+                            <span class="tag">Integra&ccedil;&otilde;es banc&aacute;rias</span>
+                            <span class="tag">Webhooks de Pix</span>
+                            <span class="tag">Logs estruturados</span>
+                            <span class="tag">Observabilidade</span>
+                            <span class="tag">Seguran&ccedil;a e compliance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section-padding gradient-border">
+            <div class="container">
+                <div class="section-heading" data-animate="fade-up">
+                    <span class="eyebrow">Onde construo impacto</span>
+                    <h2>Experi&ecirc;ncia</h2>
+                    <p>Projetos de alta disponibilidade, mensageria e integra&ccedil;&otilde;es financeiras ao longo dos &uacute;ltimos anos.</p>
+                </div>
+                <div class="timeline">
+                    <article class="timeline-item" data-animate="fade-up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Vertem &middot; Desenvolvedor Back End .NET Pleno</h3>
+                                <span class="timeline-period">dez/2024 &ndash; atual &middot; S&atilde;o Paulo (H&iacute;brido)</span>
+                            </div>
+                            <p>
+                                Atuo no barramento financeiro (SF Financial Services) e na plataforma de recompensas, entregando microservices cr&iacute;ticos com foco em resili&ecirc;ncia.
+                            </p>
+                            <ul>
+                                <li>Processamento de Pix, boletos e payment requests com regras de limite, parcelamento e consist&ecirc;ncia distribu&iacute;da.</li>
+                                <li>Integra&ccedil;&otilde;es com mensagerias financeiras e ecossistemas parceiros, utilizando RabbitMQ e padr&otilde;es orientados a eventos.</li>
+                                <li>Persist&ecirc;ncia h&iacute;brida em PostgreSQL e MongoDB com estrat&eacute;gias de sincroniza&ccedil;&atilde;o e audit logging.</li>
+                                <li>Clean Architecture, DDD e pipelines CI/CD com monitoramento e logs estruturados.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline-item" data-animate="fade-up" data-animate-delay="100">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Granito Pagamentos &middot; Desenvolvedor .NET Pleno</h3>
+                                <span class="timeline-period">ago/2024 &ndash; nov/2024 &middot; S&atilde;o Paulo (H&iacute;brido)</span>
+                            </div>
+                            <p>
+                                Desenvolvimento de APIs e produtos financeiros utilizando .NET Framework e .NET 6+, com foco em integra&ccedil;&atilde;o e experi&ecirc;ncia do cliente.
+                            </p>
+                            <ul>
+                                <li>Constru&ccedil;&atilde;o de servi&ccedil;os escal&aacute;veis em C# com integra&ccedil;&atilde;o a SQL Server e MySQL.</li>
+                                <li>Front-end responsivo com HTML, CSS, JavaScript e Bootstrap para portais internos.</li>
+                                <li>Testes funcionais, governan&ccedil;a e planejamento em ambientes de pagamentos.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline-item" data-animate="fade-up" data-animate-delay="200">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Jotatei Servi&ccedil;os de Inform&aacute;tica &middot; Desenvolvedor .NET Pleno</h3>
+                                <span class="timeline-period">jun/2024 &ndash; ago/2024 &middot; Remoto</span>
+                            </div>
+                            <p>
+                                Entrega de aplica&ccedil;&otilde;es web e mobile com .NET 6+, APIs escal&aacute;veis e hospedagem em cloud.
+                            </p>
+                            <ul>
+                                <li>Arquitetura de APIs com armazenamento em Amazon S3 e integra&ccedil;&otilde;es com servi&ccedil;os externos.</li>
+                                <li>Desenvolvimento mobile com Xamarin, conectando front e back end em experi&ecirc;ncias nativas.</li>
+                                <li>Modelagem de dados, documenta&ccedil;&atilde;o com Postman e monitoramento de integra&ccedil;&otilde;es.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="stack" class="section-padding">
+            <div class="container">
+                <div class="section-heading" data-animate="fade-up">
+                    <span class="eyebrow">Tech Radar</span>
+                    <h2>Stack &amp; Especialidades</h2>
+                    <p>Ferramentas e tecnologias que coloco em produ&ccedil;&atilde;o para garantir entregas seguras e escal&aacute;veis.</p>
+                </div>
+                <div class="stack-grid">
+                    <div class="stack-card" data-animate="fade-up">
+                        <h3>Back End</h3>
+                        <ul>
+                            <li>.NET Framework &amp; .NET 6/8/9</li>
+                            <li>ASP.NET MVC / Web API</li>
+                            <li>Entity Framework Core</li>
+                            <li>Clean Architecture &amp; DDD</li>
+                            <li>RabbitMQ &amp; mensageria</li>
+                        </ul>
+                    </div>
+                    <div class="stack-card" data-animate="fade-up" data-animate-delay="80">
+                        <h3>Front End</h3>
+                        <ul>
+                            <li>HTML5, CSS3, JavaScript</li>
+                            <li>Bootstrap, jQuery, Ajax</li>
+                            <li>Design responsivo</li>
+                            <li>UI focada em performance</li>
+                        </ul>
+                    </div>
+                    <div class="stack-card" data-animate="fade-up" data-animate-delay="160">
+                        <h3>Dados</h3>
+                        <ul>
+                            <li>SQL Server &amp; PostgreSQL</li>
+                            <li>MongoDB, AWS DynamoDB</li>
+                            <li>Modelagem e migra&ccedil;&otilde;es</li>
+                            <li>Consultas otimizadas</li>
+                        </ul>
+                    </div>
+                    <div class="stack-card" data-animate="fade-up" data-animate-delay="240">
+                        <h3>Cloud &amp; DevOps</h3>
+                        <ul>
+                            <li>AWS S3, SQS, DynamoDB</li>
+                            <li>Azure Service Bus</li>
+                            <li>Docker, Helm, Kubernetes</li>
+                            <li>CI/CD com Azure DevOps</li>
+                            <li>Observabilidade e logs</li>
+                        </ul>
+                    </div>
+                    <div class="stack-card" data-animate="fade-up" data-animate-delay="320">
+                        <h3>Mobile</h3>
+                        <ul>
+                            <li>Xamarin (iOS &amp; Android)</li>
+                            <li>Autentica&ccedil;&atilde;o e sincroniza&ccedil;&atilde;o</li>
+                            <li>Consumo de APIs REST</li>
+                        </ul>
+                    </div>
+                    <div class="stack-card" data-animate="fade-up" data-animate-delay="400">
+                        <h3>Integra&ccedil;&otilde;es Financeiras</h3>
+                        <ul>
+                            <li>Pix, boletos, payment requests</li>
+                            <li>Webhooks banc&aacute;rios</li>
+                            <li>Plataformas de recompensas</li>
+                            <li>Solu&ccedil;&otilde;es anti-fraude</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tech-marquee" aria-hidden="true">
+                    <div class="marquee-track">
+                        <span>.NET</span>
+                        <span>C#</span>
+                        <span>Entity Framework</span>
+                        <span>Azure</span>
+                        <span>AWS</span>
+                        <span>Docker</span>
+                        <span>Helm</span>
+                        <span>RabbitMQ</span>
+                        <span>PostgreSQL</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-padding gradient-border">
+            <div class="container">
+                <div class="section-heading" data-animate="fade-up">
+                    <span class="eyebrow">Casos Recentes</span>
+                    <h2>Projetos em Destaque</h2>
+                    <p>Produtos que traduzem minha experi&ecirc;ncia em integra&ccedil;&otilde;es financeiras, escalabilidade e experi&ecirc;ncias completas.</p>
+                </div>
+                <div class="project-grid">
+                    <article class="project-card" data-animate="fade-up">
+                        <div class="project-header">
+                            <span class="project-label">Vertem</span>
+                            <h3>Barramento Financeiro &amp; Marketplace</h3>
+                        </div>
+                        <p>
+                            Suite de microservices para processar Pix, boletos e recompensas, conectando plataformas de pagamento e mensagerias em tempo real.
+                        </p>
+                        <ul class="project-tags">
+                            <li>.NET 8</li>
+                            <li>RabbitMQ</li>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                            <li>Clean Architecture</li>
+                        </ul>
+                    </article>
+                    <article class="project-card" data-animate="fade-up" data-animate-delay="120">
+                        <div class="project-header">
+                            <span class="project-label">Granito Pagamentos</span>
+                            <h3>Plataforma de APIs Financeiras</h3>
+                        </div>
+                        <p>
+                            Evolu&ccedil;&atilde;o de APIs RESTful e portais internos para gest&atilde;o de opera&ccedil;&otilde;es financeiras, garantindo seguran&ccedil;a e performance.
+                        </p>
+                        <ul class="project-tags">
+                            <li>.NET Framework</li>
+                            <li>.NET 6</li>
+                            <li>SQL Server</li>
+                            <li>Bootstrap</li>
+                            <li>Testes automatizados</li>
+                        </ul>
+                    </article>
+                    <article class="project-card" data-animate="fade-up" data-animate-delay="240">
+                        <div class="project-header">
+                            <span class="project-label">Jotatei</span>
+                            <h3>Aplicativos Web &amp; Mobile</h3>
+                        </div>
+                        <p>
+                            Ecossistema de aplica&ccedil;&otilde;es com .NET 6+, Xamarin e armazenamento em AWS, promovendo integra&ccedil;&otilde;es seguras e experi&ecirc;ncia mobile consistente.
+                        </p>
+                        <ul class="project-tags">
+                            <li>.NET 6</li>
+                            <li>Xamarin</li>
+                            <li>Amazon S3</li>
+                            <li>APIs REST</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="contact">
+            <div class="container">
+                <div class="section-heading" data-animate="fade-up">
+                    <span class="eyebrow">Vamos construir algo</span>
+                    <h2>Contato</h2>
+                    <p>Aberto a novos desafios em back end, integra&ccedil;&otilde;es financeiras e solu&ccedil;&otilde;es full stack.</p>
+                </div>
+                <div class="contact-panel" data-animate="fade-up">
+                    <div class="contact-grid">
+                        <a class="contact-item" href="https://api.whatsapp.com/send?phone=5511999070180" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                            <small>+55 11 96351-6246</small>
+                        </a>
+                        <a class="contact-item" href="mailto:guilhermeduarte14511@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                            <small>guilhermeduarte14511@gmail.com</small>
+                        </a>
+                        <a class="contact-item" href="https://www.linkedin.com/in/guilherme-duarte-2253b0154/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                            <small>/guilherme-duarte-2253b0154</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Guilherme Duarte. Constru&iacute;do com .NET mindset.</p>
         </div>
-    </section>
-
-
-    <!-- Contato -->
-    <section id="contato" class="container">
-        <h2 class="section-title animate-up">Contato</h2>
-        <div class="contact-icons animate-up">
-            <a href="https://api.whatsapp.com/send?phone=5511963516246" target="_blank"><i class="fab fa-whatsapp" title="WhatsApp" style="color: #25d366;"></i></a>
-            <a href="mailto:guilhermeduarte14511@gmail.com"><i class="fas fa-envelope" title="Email" style="color: #d44638;"></i></a>
-            <a href="https://www.linkedin.com/in/guilherme-duarte-2253b0154/" target="_blank"><i class="fab fa-linkedin" title="LinkedIn" style="color: #0077b5;"></i></a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Guilherme Duarte. Todos os direitos reservados.</p>
     </footer>
 
-        <!-- Modal para exibir as imagens -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl"> <!-- Usando modal-xl para modal ainda maior -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imageModalLabel">Imagem</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="imageModalSrc" src="" alt="Imagem do projeto" class="img-fluid modal-img">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS e dependências -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript Customizado -->
     <script src="script.js"></script>
 </body>
 </html>
-

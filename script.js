@@ -1,112 +1,131 @@
-// Inicialização do Scrollspy
-var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+// Inicializa&ccedil;&atilde;o do ScrollSpy do Bootstrap
+const scrollSpy = new bootstrap.ScrollSpy(document.body, {
     target: '#navbar',
-    offset: 70
+    offset: 80
 });
 
-// Função para animações ao rolar a página
-document.addEventListener('DOMContentLoaded', function() {
-    let elements = document.querySelectorAll('.animate-up');
-    let options = {
-        threshold: 0.1
-    };
-    let observer = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(entry) {
-            if(entry.isIntersecting) {
-                entry.target.classList.add('animated');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, options);
-    elements.forEach(function(element) {
-        observer.observe(element);
-    });
+const body = document.body;
+const modeToggle = document.getElementById('modeToggle');
+const modeIcon = document.getElementById('modeIcon');
 
-    // Animação das barras de loading
-    let loadingBars = document.querySelectorAll('.loading-progress');
-    loadingBars.forEach(function(bar) {
-        let progress = bar.getAttribute('data-progress');
-        bar.style.setProperty('--progress-value', progress + '%');
-        // Definir cor da barra de acordo com o progresso
-        bar.style.backgroundColor = (progress == 100) ? 'var(--progress-complete)' : 'var(--progress-incomplete)';
-        bar.style.animation = 'loadProgress 2s forwards';
-    });
-});
+function updateModeIcon() {
+    if (!modeIcon) return;
+    if (body.classList.contains('light-mode')) {
+        modeIcon.classList.remove('fa-sun');
+        modeIcon.classList.add('fa-moon');
+    } else {
+        modeIcon.classList.remove('fa-moon');
+        modeIcon.classList.add('fa-sun');
+    }
+}
 
-// Fechar o menu ao clicar em um item (em dispositivos móveis)
-var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-var navbarCollapse = document.querySelector('.navbar-collapse');
-navLinks.forEach(function(l) {
-    l.addEventListener('click', function() {
-        if (navbarCollapse.classList.contains('show')) {
+(function initialiseTheme() {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'light') {
+        body.classList.add('light-mode');
+    }
+    updateModeIcon();
+})();
+
+if (modeToggle) {
+    modeToggle.addEventListener('click', function () {
+        body.classList.toggle('light-mode');
+        localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+        updateModeIcon();
+    });
+}
+
+// Fechar o menu ao selecionar um item em dispositivos m&oacute;veis
+const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+const navbarCollapse = document.querySelector('.navbar-collapse');
+navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
             new bootstrap.Collapse(navbarCollapse).toggle();
         }
     });
 });
 
-// Dark/Light mode toggle com animação
-document.getElementById('modeToggle').addEventListener('click', function () {
-    document.body.classList.add('transition'); // Adiciona uma classe para transição suave
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('mode', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-    updateModeIcon();
-});
+// Intersection Observer para anima&ccedil;&otilde;es suaves
+const animatedElements = document.querySelectorAll('[data-animate]');
+if (animatedElements.length) {
+    const observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                const delay = element.getAttribute('data-animate-delay');
+                if (delay) {
+                    element.style.setProperty('--delay', delay);
+                }
+                element.classList.add('is-visible');
+                obs.unobserve(element);
+            }
+        });
+    }, {
+        threshold: 0.25,
+        rootMargin: '0px 0px -80px 0px'
+    });
 
-// Função para atualizar o ícone do modo
-function updateModeIcon() {
-    const modeIcon = document.getElementById('modeIcon');
-    if (document.body.classList.contains('dark-mode')) {
-        modeIcon.classList.replace('fa-moon', 'fa-sun');
-    } else {
-        modeIcon.classList.replace('fa-sun', 'fa-moon');
-    }
+    animatedElements.forEach(function (element) {
+        observer.observe(element);
+    });
 }
 
-// Configuração inicial do modo com base na preferência do usuário
-if (localStorage.getItem('mode') === 'dark') {
-    document.body.classList.add('dark-mode');
-    updateModeIcon();
-}
+// Efeito typewriter no hero
+(function typewriter() {
+    const target = document.getElementById('typed-text');
+    if (!target) return;
 
-// Loader logic para garantir que o loader funcione corretamente em todas as situações
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        document.getElementById('loader').style.opacity = '0';
-        setTimeout(function() {
-            document.getElementById('loader').style.display = 'none';
-        }, 300); // Tempo para a transição
-    }, 500); // Tempo mínimo de exibição do loader
-});
+    const phrases = [
+        'Microservices financeiros orientados a eventos',
+        'Integra&ccedil;&otilde;es Pix, boletos e payment requests',
+        'Pipelines CI/CD com Azure DevOps, Docker e Helm',
+        'Arquiteturas escal&aacute;veis com .NET 6/8/9'
+    ];
 
-// Animação e inicialização das habilidades com bolinhas
-document.addEventListener('DOMContentLoaded', function() {
-    let skills = document.querySelectorAll('.skill-level');
-    skills.forEach(function(skill) {
-        let dots = skill.querySelectorAll('.dot');
-        let filledDots = skill.querySelectorAll('.dot.filled').length;
-        for (let i = 0; i < filledDots; i++) {
-            dots[i].classList.add('dot-filled-animation');
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function tick() {
+        const current = phrases[phraseIndex];
+        const displayed = deleting ? current.substring(0, charIndex--) : current.substring(0, charIndex++);
+        target.innerHTML = displayed;
+
+        if (!deleting && charIndex === current.length + 1) {
+            deleting = true;
+            setTimeout(tick, 2200);
+            return;
         }
-    });
+
+        if (deleting && charIndex === 0) {
+            deleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+
+        const delay = deleting ? 40 : 90;
+        setTimeout(tick, delay);
+    }
+
+    tick();
+})();
+
+// Loader fade-out
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        const loader = document.getElementById('loader');
+        if (!loader) return;
+        loader.style.opacity = '0';
+        setTimeout(function () {
+            loader.style.display = 'none';
+        }, 300);
+    }, 500);
 });
 
-// Animação suave para a transição de tema
-document.body.classList.add('transition');
-setTimeout(function() {
-    document.body.classList.remove('transition');
-}, 300); // Remove a classe após a transição inicial
+// Marquee duplicado para movimento infinito suave
+(function duplicateMarquee() {
+    const marquee = document.querySelector('.marquee-track');
+    if (!marquee) return;
+    marquee.innerHTML += marquee.innerHTML;
+})();
 
-// Modal para exibição de imagens ampliadas
-document.querySelectorAll('.image-link').forEach(function(element) {
-    element.addEventListener('click', function(event) {
-        event.preventDefault();
-        const imageSrc = this.getAttribute('data-image');
-        const imageTitle = this.getAttribute('data-title');
-
-        document.getElementById('imageModalSrc').setAttribute('src', imageSrc);
-        document.getElementById('imageModalLabel').innerText = imageTitle;
-        
-        const modal = new bootstrap.Modal(document.getElementById('imageModal'));
-        modal.show();
-    });
-});
