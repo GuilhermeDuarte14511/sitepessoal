@@ -175,7 +175,27 @@ body.light-mode .language-switch-group {
 }
 
 .hero {
+    position: relative;
     padding-top: 160px;
+    overflow: hidden;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-particles {
+    position: absolute;
+    inset: 0;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.light-mode .hero-particles {
+    opacity: 0.35;
+    mix-blend-mode: multiply;
 }
 
 .hero-eyebrow {

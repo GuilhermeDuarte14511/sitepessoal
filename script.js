@@ -13,6 +13,7 @@ const chatPanel = chatWidget ? chatWidget.querySelector('[data-chat-panel]') : n
 const chatClose = chatWidget ? chatWidget.querySelector('[data-chat-close]') : null;
 let currentLanguage = 'pt';
 let typewriterTimeout;
+let particlesInitialized = false;
 
 const translations = {
     pt: {
@@ -270,8 +271,8 @@ const translations = {
 };
 
 Object.assign(translations.pt.strings, {
-    'hero.status': 'Dispon\u00edvel para liderar squads remotos',
-    'hero.lead': 'Especialista em plataformas financeiras com .NET 8/9, orquestrando produtos cloud-native, integra\u00e7\u00f5es em tempo real e experi\u00eancias que encantam o usu\u00e1rio final.',
+    'hero.status': 'Dispon\u00edvel para impulsionar squads globais .NET',
+    'hero.lead': 'Crio plataformas financeiras cloud-native com .NET 8/9, observabilidade em tempo real e jornadas digitais centradas no cliente.',
     'hero.chip.aspire': '.NET Aspire',
     'hero.chip.event': 'Arquiteturas event-driven',
     'hero.chip.observability': 'Observabilidade financeira',
@@ -356,15 +357,15 @@ Object.assign(translations.pt.strings, {
 });
 
 translations.pt.typedPhrases = [
-    'Plataformas financeiras resilientes com .NET 8/9',
-    'Observabilidade ponta a ponta em integra\u00e7\u00f5es Pix e boleto',
-    'Automa\u00e7\u00e3o CI/CD com Azure DevOps, GitHub Actions e Bicep',
-    'Arquiteturas cloud-native com .NET Aspire e containers'
+    'Plataformas financeiras cloud-native com .NET 9 e Azure',
+    'Observabilidade em tempo real com OpenTelemetry, Grafana e Application Insights',
+    'Pipelines GitOps com Azure DevOps, GitHub Actions e Bicep',
+    'DX e feature flags com LaunchDarkly, copilots e automa\u00e7\u00e3o'
 ];
 
 Object.assign(translations.en.strings, {
-    'hero.status': 'Available to lead remote squads',
-    'hero.lead': 'Specialist in financial platforms with .NET 8/9, orchestrating cloud-native products, real-time integrations and delightful customer experiences.',
+    'hero.status': 'Ready to empower global .NET squads',
+    'hero.lead': 'I build cloud-native financial platforms with .NET 8/9, real-time observability and customer-centric digital journeys.',
     'hero.chip.aspire': '.NET Aspire',
     'hero.chip.event': 'Event-driven architectures',
     'hero.chip.observability': 'Financial observability',
@@ -442,11 +443,113 @@ Object.assign(translations.en.strings, {
 });
 
 translations.en.typedPhrases = [
-    'Financial platforms with .NET 8/9 and Azure',
-    'Pix and boleto integrations with end-to-end observability',
-    'CI/CD automation with Azure DevOps, GitHub Actions and Bicep',
-    'Cloud-native architectures powered by .NET Aspire and containers'
+    'Cloud-native financial platforms with .NET 9 and Azure',
+    'Real-time observability with OpenTelemetry, Grafana and Application Insights',
+    'GitOps pipelines powered by Azure DevOps, GitHub Actions and Bicep',
+    'Developer experience and feature flags with LaunchDarkly and AI copilots'
 ];
+
+function initialiseTiltElements() {
+    if (typeof VanillaTilt === 'undefined') {
+        return;
+    }
+    const tiltTargets = document.querySelectorAll('[data-tilt]');
+    if (!tiltTargets.length) {
+        return;
+    }
+    VanillaTilt.init(tiltTargets, {
+        max: 8,
+        speed: 500,
+        glare: false,
+        perspective: 1200,
+        reset: true,
+        easing: 'cubic-bezier(.03,.98,.52,.99)'
+    });
+}
+
+function initialiseParticlesBackground() {
+    if (particlesInitialized || typeof particlesJS === 'undefined') {
+        return;
+    }
+    const container = document.getElementById('particles-js');
+    if (!container) {
+        return;
+    }
+    particlesJS('particles-js', {
+        particles: {
+            number: {
+                value: 60,
+                density: {
+                    enable: true,
+                    value_area: 900
+                }
+            },
+            color: {
+                value: ['#3b82f6', '#00d1ff', '#38bdf8']
+            },
+            shape: {
+                type: 'circle'
+            },
+            opacity: {
+                value: 0.45,
+                random: true
+            },
+            size: {
+                value: 3,
+                random: true
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#3b82f6',
+                opacity: 0.25,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 1.2,
+                direction: 'none',
+                out_mode: 'out'
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: 'grab'
+                },
+                onclick: {
+                    enable: false
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 140,
+                    line_linked: {
+                        opacity: 0.35
+                    }
+                }
+            }
+        },
+        retina_detect: true
+    });
+    particlesInitialized = true;
+}
+
+function highlightCodeBlocks() {
+    if (typeof Prism === 'undefined') {
+        return;
+    }
+    requestAnimationFrame(() => Prism.highlightAllUnder(document.body));
+}
+
+function initialiseEnhancements() {
+    initialiseTiltElements();
+    initialiseParticlesBackground();
+    highlightCodeBlocks();
+}
 
 function updateModeIcon() {
     if (!modeIcon) {
@@ -571,6 +674,7 @@ function setLanguage(lang) {
     updateLanguageButtons(lang);
     startTypewriter();
     updateChatToggleLabel();
+    highlightCodeBlocks();
 }
 
 (function initialiseTheme() {
@@ -697,6 +801,7 @@ window.addEventListener('load', () => {
     marquee.innerHTML += marquee.innerHTML;
 })();
 
+initialiseEnhancements();
 setLanguage(localStorage.getItem('language') || 'pt');
 
 body.classList.add('transition');
