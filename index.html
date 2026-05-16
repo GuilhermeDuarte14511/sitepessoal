@@ -1,588 +1,559 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title data-i18n="meta.title">Guilherme Duarte - Portfolio .NET</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Duarte de Oliveira | Desenvolvedor .NET Pleno</title>
+    <meta name="description" content="Portfólio de Guilherme Duarte de Oliveira, Desenvolvedor Full Stack .NET Pleno com experiência em APIs, serviços financeiros, Pix, webhooks, cloud, mensageria e Xamarin.">
+    <meta name="theme-color" content="#07111f">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RQ2NQEZMG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3RQ2NQEZMG');
-    </script>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
-    <div class="loader" id="loader">
-        <div class="spinner-border text-light" role="status">
-            <span class="visually-hidden" data-i18n="loader.label">Carregando...</span>
-        </div>
-    </div>
+<body>
+    <header class="site-header" data-header>
+        <a class="brand" href="#inicio" aria-label="Ir para o início">
+            <span class="brand-mark">GD</span>
+            <span>
+                <strong>Guilherme Duarte</strong>
+                <small>.NET Pleno</small>
+            </span>
+        </a>
 
-    <div class="grid-overlay"></div>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Abrir menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top blur-surface">
-        <div class="container">
-            <a class="navbar-brand" href="#intro">Guilherme Duarte</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Alternar navegaÃ§Ã£o" data-i18n="nav.toggle" data-i18n-attr="aria-label">
-                <span class="navbar-toggler-icon"></span>
+        <nav class="site-nav" data-nav aria-label="Navegação principal">
+            <a href="#sobre">Sobre</a>
+            <a href="#impacto">Impacto</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#especialidades">Especialidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#formacao">Formação</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-button" type="button" id="themeToggle" aria-label="Alternar tema">
+                <i class="fa-solid fa-moon"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="#intro" data-i18n="nav.home">InÃ­cio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience" data-i18n="nav.experience">ExperiÃªncia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#stack" data-i18n="nav.stack">Stack</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav.projects">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contato</a></li>
-                    <li class="nav-item language-switch">
-                        <div class="language-switch-group" role="group" aria-label="Selecione o idioma" data-i18n="language.selector" data-i18n-attr="aria-label">
-                            <button type="button" class="lang-btn active" data-lang="pt" aria-pressed="true">PT</button>
-                            <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <button id="modeToggle" class="btn btn-link nav-link" aria-label="Alternar tema" data-i18n="theme.toggle" data-i18n-attr="aria-label">
-                            <i class="fas fa-sun" id="modeIcon"></i>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+            <a class="header-cta" href="mailto:guilhermeduarte14511@gmail.com">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Fale comigo</span>
+            </a>
         </div>
-    </nav>
+    </header>
 
     <main>
-        <section id="intro" class="hero section-padding">
-            <div id="particles-js" class="hero-particles" aria-hidden="true"></div>
-            <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-7" data-animate="fade-up">
-                        <span class="hero-eyebrow" data-i18n="hero.eyebrow">Desenvolvedor .NET Pleno</span>
-                        <h1 class="hero-title" data-i18n="hero.title">Guilherme Duarte</h1>
-                        <div class="hero-status" data-i18n="hero.status">Disponivel para liderar squads remotos</div>
-                        <p class="hero-lead" data-i18n="hero.lead">Especialista em plataformas financeiras com .NET 8/9, orquestrando produtos cloud-native, integrações em tempo real e experiências que encantam o usuário final.</p>
-                        <div class="hero-typed" aria-live="polite">
-                            <span class="typed-prefix">&lt;code&gt;</span>
-                            <span id="typed-text"></span>
-                            <span class="cursor">_</span>
-                            <span class="typed-suffix">&lt;/code&gt;</span>
+        <section class="hero" id="inicio">
+            <div class="hero-background" aria-hidden="true">
+                <span class="mesh mesh-one"></span>
+                <span class="mesh mesh-two"></span>
+                <span class="mesh mesh-three"></span>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-copy" data-reveal>
+                    <p class="hero-role">Desenvolvedor Full Stack .NET Pleno</p>
+                    <h1>Guilherme Duarte de Oliveira</h1>
+                    <p class="hero-lead">
+                        Construo APIs, integrações financeiras e produtos digitais com .NET, mensageria, cloud e visão de ponta a ponta.
+                    </p>
+
+                    <div class="hero-line" aria-live="polite">
+                        <span>Especialidade:</span>
+                        <strong id="typedText">serviços financeiros resilientes</strong>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="https://api.whatsapp.com/send?phone=5511999070180" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            Chamar no WhatsApp
+                        </a>
+                        <a class="button button-secondary" href="https://www.linkedin.com/in/guilherme-duarte-2253b0154/" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            Ver LinkedIn
+                        </a>
+                    </div>
+
+                    <dl class="hero-facts" aria-label="Resumo profissional">
+                        <div>
+                            <dt>5+</dt>
+                            <dd>anos em tecnologia</dd>
                         </div>
-                        <div class="hero-chips">
-                            <span class="chip" data-i18n="hero.chip.aspire">.NET Aspire</span>
-                            <span class="chip" data-i18n="hero.chip.event">Arquiteturas event-driven</span>
-                            <span class="chip" data-i18n="hero.chip.observability">Observabilidade financeira</span>
-                            <span class="chip" data-i18n="hero.chip.cloud">Azure &amp; AWS</span>
-                            <span class="chip" data-i18n="hero.chip.cicd">CI/CD &amp; DevSecOps</span>
-                            <span class="chip" data-i18n="hero.chip.ai">AI copilots</span>
+                        <div>
+                            <dt>.NET 6+</dt>
+                            <dd>APIs, MVC e serviços</dd>
                         </div>
-                        <div class="hero-cta">
-                            <a href="#contact" class="btn btn-primary btn-lg"><i class="fas fa-comments"></i><span data-i18n="hero.ctaPrimary">Vamos conversar</span></a>
-                            <a href="https://www.linkedin.com/in/guilherme-duarte-2253b0154/" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg"><i class="fab fa-linkedin"></i><span data-i18n="hero.ctaSecondary">LinkedIn</span></a>
-                            <a href="https://github.com/GuilhermeDuarte14511" target="_blank" rel="noopener" class="btn btn-ghost btn-lg"><i class="fab fa-github"></i><span data-i18n="hero.ctaTertiary">Portfolio no GitHub</span></a>
+                        <div>
+                            <dt>Pix</dt>
+                            <dd>webhooks e integrações</dd>
                         </div>
-                        <div class="hero-social">
-                            <a href="https://github.com/GuilhermeDuarte14511" class="hero-social__link" target="_blank" rel="noopener" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/guilherme-duarte-2253b0154/" class="hero-social__link" target="_blank" rel="noopener" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
+                    </dl>
+                </div>
+
+                <aside class="hero-visual" data-reveal data-reveal-delay="120" aria-label="Resumo visual da atuação de Guilherme">
+                    <div class="portrait-shell">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGPdHOXKpKXDQ/profile-displayphoto-scale_400_400/B4DZ10oyLMG8Ag-/0/1775778343864?e=1780531200&amp;v=beta&amp;t=37pU0vl4jZmVKkSsIbyFPRioqFTP5zTEjQ7WyWSqPR8" alt="Retrato de Guilherme Duarte de Oliveira">
+                        <span class="availability-dot">Disponível para bons desafios</span>
+                    </div>
+                    <div class="system-map">
+                        <div class="map-node node-main">
+                            <i class="fa-solid fa-code"></i>
+                            .NET APIs
                         </div>
-                        <div class="hero-metrics">
-                            <article class="metric-card" data-animate="fade-up" data-animate-delay="40">
-                                <span class="metric-value">5+</span>
-                                <span class="metric-label" data-i18n="hero.metric.years">Mais de 5 anos em desenvolvimento de software</span>
-                            </article>
-                            <article class="metric-card" data-animate="fade-up" data-animate-delay="80">
-                                <span class="metric-value">10+</span>
-                                <span class="metric-label" data-i18n="hero.metric.transactions">Integrações financeiras entregues na carreira</span>
-                            </article>
-                            <article class="metric-card" data-animate="fade-up" data-animate-delay="120">
-                                <span class="metric-value">10+</span>
-                                <span class="metric-label" data-i18n="hero.metric.deploys">Pipelines e entregas CI/CD ao longo da carreira</span>
-                            </article>
+                        <div class="map-row">
+                            <span>RabbitMQ</span>
+                            <span>SQS</span>
+                            <span>Webhooks</span>
                         </div>
-                        <div class="hero-highlights">
-                            <article class="highlight-card" data-animate="fade-up" data-animate-delay="160">
-                                <i class="fas fa-diagram-project"></i>
-                                <div>
-                                    <h3 data-i18n="hero.highlight1.title">Microservices Financeiros</h3>
-                                    <p data-i18n="hero.highlight1.body">Processos de Pix, boletos e payment requests com integrações de alto impacto.</p>
-                                </div>
-                            </article>
-                            <article class="highlight-card" data-animate="fade-up" data-animate-delay="200">
-                                <i class="fas fa-cloud"></i>
-                                <div>
-                                    <h3 data-i18n="hero.highlight2.title">Cloud Native</h3>
-                                    <p data-i18n="hero.highlight2.body">Orquestracao em AWS S3/SQS/DynamoDB e Azure Service Bus com pipelines Azure DevOps, Docker, Helm e Kubernetes.</p>
-                                </div>
-                            </article>
+                        <div class="map-flow">
+                            <span>Pix</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span>Validação</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span>Cancelamento</span>
                         </div>
                     </div>
-                    <div class="col-lg-5" data-animate="fade-left">
-                        <div class="code-preview" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-perspective="900">
-                            <header><span></span><span></span><span></span></header>
-<pre><code class="language-csharp">public sealed class PixOrchestrator : IEndpoint
-{
-    public void MapEndpoint(IEndpointRouteBuilder endpoints)
-    {
-        endpoints.MapPost(&quot;/pix/execute&quot;, async (
-            PixRequest request,
-            IMessageBus bus,
-            IMediator mediator,
-            ActivitySource telemetry) =&gt;
-        {
-            using var activity = telemetry.StartActivity(&quot;Pix.Execute&quot;);
-            await bus.Publish(new PaymentInitiated(request));
-            var response = await mediator.Send(new ValidatePix(request));
-            return response.IsApproved
-                ? Results.Ok(new { request.TransactionId })
-                : Results.BadRequest(response.Error);
-        })
-        .WithName(&quot;ExecutePix&quot;)
-        .RequireAuthorization(&quot;pix:write&quot;);
-    }
-}</code></pre>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section intro-section" id="sobre">
+            <div class="section-kicker">Sobre mim</div>
+            <div class="intro-grid">
+                <div data-reveal>
+                    <h2>Da regra de negócio crítica ao deploy monitorado.</h2>
+                </div>
+                <div class="intro-copy" data-reveal data-reveal-delay="100">
+                    <p>
+                        Sou desenvolvedor Full Stack .NET Pleno, bacharel em Ciência da Computação pela Universidade Nove de Julho, com atuação em produtos financeiros, e-commerce, marketplace, APIs RESTful e sistemas integrados.
+                    </p>
+                    <p>
+                        Gosto de trabalhar onde a tecnologia precisa conversar com operação, cliente e negócio: integrar bancos, desenhar endpoints, manter dados consistentes, automatizar entregas e transformar processos complexos em jornadas digitais mais confiáveis.
+                    </p>
+                    <p>
+                        Minha base combina .NET Framework, .NET 6+, SQL Server, MySQL, Amazon S3, RabbitMQ, SQS, Docker, Kubernetes, Azure DevOps, front-end responsivo e desenvolvimento mobile com Xamarin.
+                    </p>
+                </div>
+            </div>
+
+            <div class="value-strip" data-reveal>
+                <article>
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h3>Serviços financeiros</h3>
+                    <p>Pix, webhooks, validações, cancelamentos, marketplace e integrações com parceiros.</p>
+                </article>
+                <article>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>Entrega full stack</h3>
+                    <p>APIs, bancos de dados, front-end, mobile e manutenção evolutiva no mesmo fluxo.</p>
+                </article>
+                <article>
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <h3>Cloud e automação</h3>
+                    <p>Armazenamento em nuvem, mensageria, containers e pipelines para entrega contínua.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section impact-section" id="impacto">
+            <div class="section-heading align-left" data-reveal>
+                <div class="section-kicker">Impacto até aqui</div>
+                <h2>Uma carreira que saiu do suporte, passou por dados e cresceu em produtos .NET.</h2>
+                <p>O diferencial está em entender o problema inteiro: atendimento, regra de negócio, dados, integração, interface e sustentação depois da entrega.</p>
+            </div>
+
+            <div class="impact-board">
+                <article class="impact-lead" data-reveal>
+                    <span>Perfil atual</span>
+                    <h3>Full Stack .NET Pleno com foco em back-end, integrações financeiras e produtos digitais.</h3>
+                    <p>Minha evolução técnica veio de ambientes reais: suporte ao usuário, arquitetura de dados, desenvolvimento web/mobile e operações financeiras com APIs, mensageria e cloud.</p>
+                </article>
+
+                <div class="impact-metrics" data-reveal data-reveal-delay="80">
+                    <article>
+                        <strong>2020</strong>
+                        <span>início em suporte técnico e relacionamento com usuários</span>
+                    </article>
+                    <article>
+                        <strong>2021</strong>
+                        <span>experiência em desenvolvimento e arquitetura de dados</span>
+                    </article>
+                    <article>
+                        <strong>2022+</strong>
+                        <span>crescimento em .NET, APIs, front-end, mobile e cloud</span>
+                    </article>
+                    <article>
+                        <strong>2024+</strong>
+                        <span>atuação plena em pagamentos, marketplace e serviços financeiros</span>
+                    </article>
+                </div>
+            </div>
+
+            <div class="career-pillars" data-reveal>
+                <span>APIs RESTful</span>
+                <span>.NET Framework</span>
+                <span>.NET 6+</span>
+                <span>SQL Server</span>
+                <span>MySQL</span>
+                <span>Amazon S3</span>
+                <span>RabbitMQ</span>
+                <span>SQS</span>
+                <span>Docker</span>
+                <span>Kubernetes</span>
+                <span>Azure DevOps</span>
+                <span>Xamarin</span>
+            </div>
+        </section>
+
+        <section class="section timeline-section" id="experiencia">
+            <div class="section-heading" data-reveal>
+                <div class="section-kicker">Experiência profissional</div>
+                <h2>Uma trajetória construída em sistemas que não podem parar.</h2>
+                <p>Experiência recente em produtos financeiros, integrações, APIs, dados e manutenção de sistemas em produção.</p>
+            </div>
+
+            <div class="timeline">
+                <article class="timeline-item" data-reveal>
+                    <span class="timeline-date">Dez/2024 - atualmente</span>
+                    <div class="timeline-card">
+                        <div>
+                            <h3>Vertem</h3>
+                            <strong>Desenvolvedor Back-end .NET Pleno</strong>
                         </div>
+                        <p>Atuação em serviços financeiros e marketplace, com foco em APIs, mensageria, Pix, webhooks e regras críticas de validação.</p>
+                        <ul>
+                            <li>Desenvolvimento de integrações para fluxos financeiros e comunicação entre sistemas.</li>
+                            <li>Manutenção e evolução de serviços com .NET, mensageria e bancos de dados.</li>
+                            <li>Apoio a confiabilidade, rastreabilidade e continuidade de sistemas em produção.</li>
+                        </ul>
                     </div>
+                </article>
+
+                <article class="timeline-item" data-reveal>
+                    <span class="timeline-date">Ago/2024 - Nov/2024</span>
+                    <div class="timeline-card">
+                        <div>
+                            <h3>Inter Pag</h3>
+                            <strong>Desenvolvedor .NET Pleno</strong>
+                        </div>
+                        <p>Manutenção e evolução de APIs, integrações com bancos de dados e interfaces web para operações financeiras.</p>
+                        <ul>
+                            <li>Trabalho com .NET Framework, .NET 6+, SQL Server e MySQL.</li>
+                            <li>Desenvolvimento front-end com HTML, CSS e JavaScript.</li>
+                            <li>Correção, sustentação e melhoria de serviços internos.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item" data-reveal>
+                    <span class="timeline-date">Jun/2024 - Jul/2024</span>
+                    <div class="timeline-card">
+                        <div>
+                            <h3>Jotatei Serviços de Informática</h3>
+                            <strong>Desenvolvedor Full Stack .NET Pleno</strong>
+                        </div>
+                        <p>Desenvolvimento de aplicações com .NET 6+, APIs e armazenamento em nuvem com Amazon S3.</p>
+                        <ul>
+                            <li>Criação e manutenção de APIs RESTful.</li>
+                            <li>Experiência em front-end e manutenção de sistemas.</li>
+                            <li>Integração de aplicações com serviços em nuvem.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item" data-reveal>
+                    <span class="timeline-date">Set/2022 - Jun/2024</span>
+                    <div class="timeline-card">
+                        <div>
+                            <h3>Jotatei Serviços de Informática</h3>
+                            <strong>Desenvolvedor Full Stack JR</strong>
+                        </div>
+                        <p>Base full stack em .NET, APIs, armazenamento em nuvem, suporte a front-end e back-end, incluindo mobile com Xamarin.</p>
+                        <ul>
+                            <li>Desenvolvimento e manutenção de funcionalidades em sistemas web.</li>
+                            <li>Integração com APIs e bancos de dados.</li>
+                            <li>Apoio a aplicações mobile e rotinas de sustentação.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item" data-reveal>
+                    <span class="timeline-date">Mai/2021 - Ago/2021</span>
+                    <div class="timeline-card">
+                        <div>
+                            <h3>Track&Field</h3>
+                            <strong>Estágio em Desenvolvimento e Arquitetura de Dados</strong>
+                        </div>
+                        <p>Experiência inicial com análise de sistemas, cloud, dados e práticas de desenvolvimento seguro.</p>
+                        <ul>
+                            <li>Participação em análises de sistemas em nuvem e desenho de pipelines de dados.</li>
+                            <li>Apoio em documentação, revisão técnica e organização de informações para squads.</li>
+                            <li>Contato com arquitetura, segurança e colaboração em times ágeis.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item" data-reveal>
+                    <span class="timeline-date">Dez/2020 - Mai/2021</span>
+                    <div class="timeline-card">
+                        <div>
+                            <h3>Jotatei Serviços de Informática</h3>
+                            <strong>Suporte Técnico</strong>
+                        </div>
+                        <p>Base profissional em atendimento, diagnóstico de incidentes e relacionamento direto com usuários.</p>
+                        <ul>
+                            <li>Atendimento por telefone, e-mail e WhatsApp com acompanhamento de solicitações.</li>
+                            <li>Treinamentos e apresentações de soluções para clientes.</li>
+                            <li>Pesquisa e resolução de incidentes técnicos reportados em produção.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section expertise-section" id="especialidades">
+            <div class="section-heading" data-reveal>
+                <div class="section-kicker">Especialidades</div>
+                <h2>Stack prática para entregar software confiável.</h2>
+                <p>Ferramentas que uso para conectar negócio, engenharia e operação sem perder clareza no caminho.</p>
+            </div>
+
+            <div class="expertise-grid">
+                <article class="expertise-card" data-reveal>
+                    <span>01</span>
+                    <h3>Back-end .NET</h3>
+                    <p>C#, .NET Framework, .NET 6+, ASP.NET, MVC, APIs RESTful, manutenção de serviços e integração entre sistemas.</p>
+                </article>
+                <article class="expertise-card" data-reveal>
+                    <span>02</span>
+                    <h3>Dados e integrações</h3>
+                    <p>SQL Server, MySQL, modelagem, consultas, consistência de dados, Postman, webhooks e contratos de APIs.</p>
+                </article>
+                <article class="expertise-card" data-reveal>
+                    <span>03</span>
+                    <h3>Mensageria e cloud</h3>
+                    <p>RabbitMQ, SQS, Amazon S3, Azure DevOps, Docker, Kubernetes e automações para ambientes modernos.</p>
+                </article>
+                <article class="expertise-card" data-reveal>
+                    <span>04</span>
+                    <h3>Front-end e mobile</h3>
+                    <p>HTML, CSS, JavaScript, interfaces responsivas e desenvolvimento mobile com Xamarin conectado a APIs.</p>
+                </article>
+                <article class="expertise-card" data-reveal>
+                    <span>05</span>
+                    <h3>Produtos financeiros</h3>
+                    <p>Pix, validações, cancelamentos, e-commerce, marketplace, integrações bancárias e rotinas operacionais.</p>
+                </article>
+                <article class="expertise-card" data-reveal>
+                    <span>06</span>
+                    <h3>Colaboração técnica</h3>
+                    <p>Trabalho em equipe, controle de versão, tomada de decisão, documentação e comunicação clara com áreas de negócio.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section stack-lab-section">
+            <div class="section-heading" data-reveal>
+                <div class="section-kicker">Stack em contexto</div>
+                <h2>Não é só lista de tecnologia. É como elas entram no produto.</h2>
+                <p>Organizo a stack por responsabilidade: construir, integrar, armazenar, entregar e manter.</p>
+            </div>
+
+            <div class="stack-lab">
+                <article class="stack-lane" data-reveal>
+                    <i class="fa-solid fa-server"></i>
+                    <h3>Construção</h3>
+                    <p>C#, .NET Framework, .NET 6+, ASP.NET MVC, APIs RESTful, Postman e padrões de manutenção evolutiva.</p>
+                </article>
+                <article class="stack-lane" data-reveal>
+                    <i class="fa-solid fa-arrows-turn-to-dots"></i>
+                    <h3>Integração</h3>
+                    <p>Webhooks, Pix, validações, cancelamentos, RabbitMQ, SQS e comunicação entre sistemas financeiros.</p>
+                </article>
+                <article class="stack-lane" data-reveal>
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Dados</h3>
+                    <p>SQL Server, MySQL, modelagem relacional, consultas e consistência entre serviços e operações.</p>
+                </article>
+                <article class="stack-lane" data-reveal>
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Entrega</h3>
+                    <p>Amazon S3, Azure DevOps, Docker, Kubernetes, versionamento e automação para ambientes produtivos.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section projects-section" id="projetos">
+            <div class="section-heading align-left" data-reveal>
+                <div class="section-kicker">Frentes de impacto</div>
+                <h2>Projetos que traduzem minha experiência.</h2>
+            </div>
+
+            <div class="project-showcase">
+                <article class="project-panel project-featured" data-reveal>
+                    <div>
+                        <span class="project-tag">Financeiro</span>
+                        <h3>Fluxos de Pix, webhooks e validações</h3>
+                        <p>Integrações para serviços financeiros com regras de negócio, comunicação assíncrona e manutenção de jornadas críticas.</p>
+                    </div>
+                    <ul>
+                        <li>.NET</li>
+                        <li>RabbitMQ</li>
+                        <li>SQS</li>
+                        <li>SQL Server</li>
+                        <li>MySQL</li>
+                    </ul>
+                </article>
+
+                <article class="project-panel" data-reveal>
+                    <span class="project-tag">Marketplace</span>
+                    <h3>E-commerce e serviços integrados</h3>
+                    <p>Experiência em marketplace, APIs RESTful e integrações entre plataformas, bancos e sistemas internos.</p>
+                </article>
+
+                <article class="project-panel" data-reveal>
+                    <span class="project-tag">Mobile</span>
+                    <h3>Aplicações Xamarin conectadas a APIs</h3>
+                    <p>Desenvolvimento e suporte a experiências mobile consumindo serviços back-end e sincronização com sistemas existentes.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section proof-section">
+            <div class="proof-grid">
+                <div data-reveal>
+                    <div class="section-kicker">O que já fiz na prática</div>
+                    <h2>Entregas que conectam produto, operação e tecnologia.</h2>
+                </div>
+                <div class="proof-list">
+                    <article data-reveal>
+                        <span>01</span>
+                        <p>Criação e manutenção de APIs para sistemas financeiros e produtos digitais.</p>
+                    </article>
+                    <article data-reveal>
+                        <span>02</span>
+                        <p>Integrações com bancos de dados, mensageria e serviços cloud para sustentar fluxos críticos.</p>
+                    </article>
+                    <article data-reveal>
+                        <span>03</span>
+                        <p>Atuação em e-commerce, marketplace, Pix, webhooks, validações e cancelamentos.</p>
+                    </article>
+                    <article data-reveal>
+                        <span>04</span>
+                        <p>Construção de front-end responsivo e suporte a aplicações mobile com Xamarin.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="focus" class="section-padding section-alt">
-            <div class="container">
-                <div class="section-heading" data-animate="fade-up">
-                    <span class="eyebrow" data-i18n="focus.eyebrow">Agora</span>
-                    <h2 data-i18n="focus.title">O que estou construindo em 2025</h2>
-                    <p data-i18n="focus.description">Projetos de alta energia com squads enxutos, cloud hibrida e jornadas digitais que exigem disponibilidade continua.</p>
+        <section class="section method-section">
+            <div class="method-grid">
+                <div data-reveal>
+                    <div class="section-kicker">Como eu trabalho</div>
+                    <h2>Clareza antes do código, cuidado depois do deploy.</h2>
                 </div>
-                <div class="focus-grid">
-                    <article class="focus-card" data-animate="fade-up">
-                        <div class="focus-card__icon">
-                            <i class="fas fa-building-columns"></i>
+                <div class="method-list">
+                    <article data-reveal>
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        <div>
+                            <h3>Entendo o fluxo real</h3>
+                            <p>Mapeio regra, exceções, dependências e riscos antes de escrever o endpoint.</p>
                         </div>
-                        <h3 data-i18n="focus.card1.title">Banking-as-a-Service</h3>
-                        <p data-i18n="focus.card1.body">Evoluo hubs financeiros com .NET 9, mensageria e compliance em multiplas instituicoes.</p>
-                        <ul class="focus-card__list">
-                            <li data-i18n="focus.card1.item1">Esteiras Pix com latencia controlada</li>
-                            <li data-i18n="focus.card1.item2">Observabilidade distribuida e FinOps</li>
-                            <li data-i18n="focus.card1.item3">APIs seguras com governance-as-code</li>
-                        </ul>
                     </article>
-                    <article class="focus-card" data-animate="fade-up" data-animate-delay="120">
-                        <div class="focus-card__icon">
-                            <i class="fas fa-people-group"></i>
+                    <article data-reveal>
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <div>
+                            <h3>Desenho contratos simples</h3>
+                            <p>Prefiro APIs, eventos e modelos que o time consegue manter sem adivinhação.</p>
                         </div>
-                        <h3 data-i18n="focus.card2.title">Developer Acceleration</h3>
-                        <p data-i18n="focus.card2.body">Orquestro pipelines, automações e dashboards que deixam squads prontos para entregar em semanas.</p>
-                        <ul class="focus-card__list">
-                            <li data-i18n="focus.card2.item1">GitHub Actions + Azure DevOps side by side</li>
-                            <li data-i18n="focus.card2.item2">Feature flags e trunk based development</li>
-                            <li data-i18n="focus.card2.item3">Onboarding gamificado para devs animados</li>
-                        </ul>
                     </article>
-                    <article class="focus-card" data-animate="fade-up" data-animate-delay="240">
-                        <div class="focus-card__icon">
-                            <i class="fas fa-robot"></i>
+                    <article data-reveal>
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div>
+                            <h3>Levo produção a sério</h3>
+                            <p>Logs, testes, versionamento, monitoramento e rollback fazem parte da entrega.</p>
                         </div>
-                        <h3 data-i18n="focus.card3.title">.NET + AI Platforms</h3>
-                        <p data-i18n="focus.card3.body">Integro copilots, chatbots e automatizacoes com Azure OpenAI, mantendo rastreabilidade.</p>
-                        <ul class="focus-card__list">
-                            <li data-i18n="focus.card3.item1">Cognitive search com Azure AI Search</li>
-                            <li data-i18n="focus.card3.item2">Eventos em tempo real com SignalR</li>
-                            <li data-i18n="focus.card3.item3">Guardrails de Responsible AI</li>
-                        </ul>
                     </article>
                 </div>
-                <div class="focus-footer" data-animate="fade-up" data-animate-delay="320">
-                    <span data-i18n="focus.footer">Curto liderar squads animados e com autonomia. Bora tirar aquela ideia do papel?</span>
-                    <a href="#contact" class="btn btn-primary btn-lg">
-                        <i class="fas fa-bolt"></i>
-                        <span data-i18n="focus.cta">Agendar um discovery</span>
+            </div>
+        </section>
+
+        <section class="section education-section" id="formacao">
+            <div class="section-heading" data-reveal>
+                <div class="section-kicker">Formação</div>
+                <h2>Base acadêmica e cursos complementares.</h2>
+            </div>
+
+            <div class="education-grid">
+                <article class="education-main" data-reveal>
+                    <span>2019 - 2022</span>
+                    <h3>Bacharel em Ciência da Computação</h3>
+                    <p>Universidade Nove de Julho</p>
+                </article>
+                <div class="course-list" data-reveal data-reveal-delay="100">
+                    <article>
+                        <strong>Inglês</strong>
+                        <span>IW English School · Jan/2018 - Dez/2020</span>
+                    </article>
+                    <article>
+                        <strong>Testes Unitários em .NET</strong>
+                        <span>Udemy · Dez/2022</span>
+                    </article>
+                    <article>
+                        <strong>HTML e CSS Web</strong>
+                        <span>Abril/2023</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contato">
+            <div class="contact-card" data-reveal>
+                <div>
+                    <div class="section-kicker">Contato</div>
+                    <h2>Vamos conversar sobre o próximo sistema?</h2>
+                    <p>Aberto a desafios em back-end .NET, integrações financeiras, sustentação evolutiva, full stack e cloud.</p>
+                </div>
+
+                <div class="contact-actions">
+                    <a href="mailto:guilhermeduarte14511@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>
+                            <strong>E-mail</strong>
+                            guilhermeduarte14511@gmail.com
+                        </span>
                     </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="section-padding">
-            <div class="container">
-                <div class="section-heading" data-animate="fade-up">
-                    <span class="eyebrow" data-i18n="about.eyebrow">TrajetÃ³ria</span>
-                    <h2 data-i18n="about.title">Sobre Mim</h2>
-                    <p data-i18n="about.description">SoluÃ§Ãµes ponta a ponta com foco em performance, seguranÃ§a e integraÃ§Ãµes financeiras.</p>
-                </div>
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5" data-animate="fade-up">
-                        <div class="profile-card">
-                            <img src="https://media.licdn.com/dms/image/v2/D4E03AQHCVATo4V35fQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1677787728405?e=1762992000&v=beta&t=cn3ZSXgXR2x6O3iq3IgWd4B29UWs6MLwVVNoJYBj6TE" alt="Retrato de Guilherme Duarte" class="profile-photo">
-                            <div class="profile-bio">
-                                <h3 data-i18n="about.profileTitle">Perfil</h3>
-                                <p data-i18n="about.profileText">24 anos, bacharel em CiÃªncia da ComputaÃ§Ã£o (UNINOVE) e desenvolvedor full stack orientado a resultados.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7" data-animate="fade-up" data-animate-delay="150">
-                        <div class="about-grid">
-                            <p data-i18n="about.paragraph1">Ao longo da minha jornada construÃ­ APIs RESTful, barramentos financeiros e plataformas completas usando C#, ASP.NET MVC/Web API e Entity Framework, seguindo Clean Architecture e DDD.</p>
-                            <p data-i18n="about.paragraph2">Gosto de desafiar integraÃ§Ãµes entre sistemas, aplicando observabilidade, logs estruturados e governanÃ§a para garantir escalabilidade, seguranÃ§a e rastreabilidade de ponta a ponta.</p>
-                            <p data-i18n="about.paragraph3">Domino ciclo completo: bancos SQL e NoSQL, front-end responsivo com HTML, CSS, JavaScript, alÃ©m de experiÃªncias mobile com Xamarin e estratÃ©gias cloud-first.</p>
-                        </div>
-                        <div class="about-tags">
-                            <span class="tag" data-i18n="about.tag.integrations">IntegraÃ§Ãµes bancÃ¡rias</span>
-                            <span class="tag" data-i18n="about.tag.pix">Webhooks de Pix</span>
-                            <span class="tag" data-i18n="about.tag.logs">Logs estruturados</span>
-                            <span class="tag" data-i18n="about.tag.observability">Observabilidade</span>
-                            <span class="tag" data-i18n="about.tag.security">SeguranÃ§a e compliance</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="section-padding gradient-border">
-            <div class="container">
-                <div class="section-heading" data-animate="fade-up">
-                    <span class="eyebrow" data-i18n="experience.eyebrow">Onde construo impacto</span>
-                    <h2 data-i18n="experience.title">ExperiÃªncia</h2>
-                    <p data-i18n="experience.description">Projetos de alta disponibilidade, mensageria e integraÃ§Ãµes financeiras ao longo dos Ãºltimos anos.</p>
-                </div>
-                <div class="timeline">
-                    <article class="timeline-item" data-animate="fade-up">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 data-i18n="experience.vertem.role">Vertem - Desenvolvedor Back End .NET Pleno</h3>
-                                <span class="timeline-period" data-i18n="experience.vertem.period">dez/2024 - atual - São Paulo (híbrido)</span>
-                            </div>
-                            <p data-i18n="experience.vertem.summary">Atuo no barramento financeiro SF Financial Services e no marketplace de recompensas, construindo microservices resilientes e escaláveis.</p>
-                            <ul>
-                                <li data-i18n="experience.vertem.point1">Processo Pix, boletos e payment requests com regras de limite, parcelamento e antifraude.</li>
-                                <li data-i18n="experience.vertem.point2">Orquestro integrações com mensagerias financeiras e parceiros usando RabbitMQ e eventos.</li>
-                                <li data-i18n="experience.vertem.point3">Garanto persistência e consistência com PostgreSQL, MongoDB e sincronização distribuída.</li>
-                                <li data-i18n="experience.vertem.point4">Evoluo Clean Architecture, DDD, CI/CD, monitoramento e logs estruturados.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="timeline-item" data-animate="fade-up" data-animate-delay="80">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 data-i18n="experience.granito.role">Granito Pagamentos - Desenvolvedor .NET Pleno</h3>
-                                <span class="timeline-period" data-i18n="experience.granito.period">ago/2024 - nov/2024 - São Paulo (híbrido)</span>
-                            </div>
-                            <p data-i18n="experience.granito.summary">Especialização em .NET Framework e .NET 6+, criando APIs e portais B2B para novos produtos financeiros.</p>
-                            <ul>
-                                <li data-i18n="experience.granito.point1">Migrei serviços C# para .NET 6+ com SQL Server e MySQL garantindo performance.</li>
-                                <li data-i18n="experience.granito.point2">Construí interfaces responsivas com HTML, CSS, JavaScript e Bootstrap.</li>
-                                <li data-i18n="experience.granito.point3">Implementei testes, observabilidade e rotinas DevOps para ambientes de pagamentos.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="timeline-item" data-animate="fade-up" data-animate-delay="160">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 data-i18n="experience.jotatei.role">Jotatei Serviços de Informática - Desenvolvedor .NET Pleno</h3>
-                                <span class="timeline-period" data-i18n="experience.jotatei.period">jun/2024 - ago/2024 - Remoto</span>
-                            </div>
-                            <p data-i18n="experience.jotatei.summary">Desenvolvimento de aplicações web e mobile .NET 6+, com integrações em AWS e experiências omnichannel.</p>
-                            <ul>
-                                <li data-i18n="experience.jotatei.point1">Entreguei APIs REST e integrações usando .NET 6+ e Amazon S3.</li>
-                                <li data-i18n="experience.jotatei.point2">Implementei front-end responsivo com HTML, CSS e JavaScript.</li>
-                                <li data-i18n="experience.jotatei.point3">Criei apps mobile em Xamarin conectando front e back end.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="timeline-item" data-animate="fade-up" data-animate-delay="240">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 data-i18n="experience.fullstackjr.role">Jotatei Serviços de Informática - Desenvolvedor Full Stack JR II</h3>
-                                <span class="timeline-period" data-i18n="experience.fullstackjr.period">jan/2024 - jun/2024 - Remoto</span>
-                            </div>
-                            <p data-i18n="experience.fullstackjr.summary">Atuação full stack em produtos .NET 6+, conectando APIs, front-end e mobile em ciclos rápidos.</p>
-                            <ul>
-                                <li data-i18n="experience.fullstackjr.point1">Implementei funcionalidades end-to-end com .NET 6+, REST e bancos relacionais.</li>
-                                <li data-i18n="experience.fullstackjr.point2">Mantive front-end responsivo com HTML, CSS e JavaScript moderno.</li>
-                                <li data-i18n="experience.fullstackjr.point3">Automatizei testes e integrações usando Postman, Git e pipelines CI/CD.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="timeline-item" data-animate="fade-up" data-animate-delay="320">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 data-i18n="experience.devjr.role">Jotatei Serviços de Informática - Desenvolvedor Jr</h3>
-                                <span class="timeline-period" data-i18n="experience.devjr.period">set/2022 - jan/2024 - Remoto</span>
-                            </div>
-                            <p data-i18n="experience.devjr.summary">Evoluí produtos web e integrações financeiras, apoiando squads em dados e APIs.</p>
-                            <ul>
-                                <li data-i18n="experience.devjr.point1">Modelei bancos de dados e consultas para garantir consistência e performance.</li>
-                                <li data-i18n="experience.devjr.point2">Documentei e testei APIs com Postman, automatizando cenários críticos.</li>
-                                <li data-i18n="experience.devjr.point3">Apoiei times de negócio com monitoramento, suporte e entrega ágil.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="timeline-item" data-animate="fade-up" data-animate-delay="400">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 data-i18n="experience.trackfield.role">Track&Field - Estágio em Desenvolvimento e Arquitetura de Dados</h3>
-                                <span class="timeline-period" data-i18n="experience.trackfield.period">mai/2021 - ago/2021 - São Paulo</span>
-                            </div>
-                            <p data-i18n="experience.trackfield.summary">Estágio focado em cloud, arquitetura de dados e desenvolvimento seguro em AWS.</p>
-                            <ul>
-                                <li data-i18n="experience.trackfield.point1">Participei de análises de sistemas em nuvem e desenho de pipelines de dados.</li>
-                                <li data-i18n="experience.trackfield.point2">Apliquei práticas de desenvolvimento seguro e revisão de código.</li>
-                                <li data-i18n="experience.trackfield.point3">Contribuí com squads ágeis em documentação e suporte técnico.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="timeline-item" data-animate="fade-up" data-animate-delay="480">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h3 data-i18n="experience.support.role">Jotatei Serviços de Informática - Suporte Técnico</h3>
-                                <span class="timeline-period" data-i18n="experience.support.period">dez/2020 - mai/2021 - São Paulo</span>
-                            </div>
-                            <p data-i18n="experience.support.summary">Suporte multicanal para clientes, garantindo SLAs e treinamentos sobre os produtos.</p>
-                            <ul>
-                                <li data-i18n="experience.support.point1">Atendi clientes por telefone, e-mail e WhatsApp, acompanhando SLA.</li>
-                                <li data-i18n="experience.support.point2">Realizei treinamentos e apresentações das soluções desenvolvidas.</li>
-                                <li data-i18n="experience.support.point3">Pesquisei e resolvi incidentes técnicos reportados pelos usuários.</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="stack" class="section-padding">
-            <div class="container">
-                <div class="section-heading" data-animate="fade-up">
-                    <span class="eyebrow" data-i18n="stack.eyebrow">Tech Radar</span>
-                    <h2 data-i18n="stack.title">Stack &amp; Especialidades</h2>
-                    <p data-i18n="stack.description">Ferramentas e tecnologias que coloco em produÃ§Ã£o para garantir entrega segura e escalÃ¡vel.</p>
-                </div>
-                <div class="stack-grid">
-                    <div class="stack-card" data-animate="fade-up">
-                        <h3 data-i18n="stack.backend.title">Back End</h3>
-                        <ul>
-                            <li data-i18n="stack.backend.item1">.NET Framework &amp; .NET 6/8/9</li>
-                            <li data-i18n="stack.backend.item2">ASP.NET MVC / Web API</li>
-                            <li data-i18n="stack.backend.item3">Entity Framework Core</li>
-                            <li data-i18n="stack.backend.item4">Clean Architecture &amp; DDD</li>
-                            <li data-i18n="stack.backend.item5">RabbitMQ &amp; mensageria</li>
-                        </ul>
-                    </div>
-                    <div class="stack-card" data-animate="fade-up" data-animate-delay="80">
-                        <h3 data-i18n="stack.frontend.title">Front End</h3>
-                        <ul>
-                            <li data-i18n="stack.frontend.item1">HTML5, CSS3, JavaScript</li>
-                            <li data-i18n="stack.frontend.item2">Bootstrap, jQuery, Ajax</li>
-                            <li data-i18n="stack.frontend.item3">Design responsivo</li>
-                            <li data-i18n="stack.frontend.item4">UI focada em performance</li>
-                        </ul>
-                    </div>
-                    <div class="stack-card" data-animate="fade-up" data-animate-delay="160">
-                        <h3 data-i18n="stack.data.title">Dados</h3>
-                        <ul>
-                            <li data-i18n="stack.data.item1">SQL Server &amp; PostgreSQL</li>
-                            <li data-i18n="stack.data.item2">MongoDB, AWS DynamoDB</li>
-                            <li data-i18n="stack.data.item3">Modelagem e consultas otimizadas</li>
-                        </ul>
-                    </div>
-                    <div class="stack-card" data-animate="fade-up" data-animate-delay="240">
-                        <h3 data-i18n="stack.devops.title">Cloud &amp; DevOps</h3>
-                        <ul>
-                            <li data-i18n="stack.devops.item1">AWS S3, SQS, DynamoDB</li>
-                            <li data-i18n="stack.devops.item2">Azure Service Bus</li>
-                            <li data-i18n="stack.devops.item3">Docker, Helm, Kubernetes</li>
-                            <li data-i18n="stack.devops.item4">CI/CD com Azure DevOps</li>
-                            <li data-i18n="stack.devops.item5">Observabilidade e logs</li>
-                        </ul>
-                    </div>
-                    <div class="stack-card" data-animate="fade-up" data-animate-delay="320">
-                        <h3 data-i18n="stack.mobile.title">Mobile</h3>
-                        <ul>
-                            <li data-i18n="stack.mobile.item1">Xamarin (iOS &amp; Android)</li>
-                            <li data-i18n="stack.mobile.item2">AutenticaÃ§Ã£o e sincronizaÃ§Ã£o</li>
-                            <li data-i18n="stack.mobile.item3">Consumo de APIs REST</li>
-                        </ul>
-                    </div>
-                    <div class="stack-card" data-animate="fade-up" data-animate-delay="400">
-                        <h3 data-i18n="stack.finance.title">IntegraÃ§Ãµes Financeiras</h3>
-                        <ul>
-                            <li data-i18n="stack.finance.item1">Pix, boletos, payment requests</li>
-                            <li data-i18n="stack.finance.item2">Webhooks bancÃ¡rios</li>
-                            <li data-i18n="stack.finance.item3">Plataformas de recompensas</li>
-                            <li data-i18n="stack.finance.item4">SoluÃ§Ãµes antifraude</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tech-marquee" aria-hidden="true">
-                    <div class="marquee-track">
-                        <span>.NET</span>
-                        <span>C#</span>
-                        <span>Entity Framework</span>
-                        <span>Azure</span>
-                        <span>AWS</span>
-                        <span>Docker</span>
-                        <span>Helm</span>
-                        <span>RabbitMQ</span>
-                        <span>PostgreSQL</span>
-                        <span>MongoDB</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section-padding gradient-border">
-            <div class="container">
-                <div class="section-heading" data-animate="fade-up">
-                    <span class="eyebrow" data-i18n="projects.eyebrow">Casos Recentes</span>
-                    <h2 data-i18n="projects.title">Projetos em Destaque</h2>
-                    <p data-i18n="projects.description">Produtos que traduzem minha experiÃªncia em integraÃ§Ãµes financeiras, escalabilidade e jornadas completas.</p>
-                </div>
-                <div class="project-grid">
-                    <article class="project-card" data-animate="fade-up">
-                        <div class="project-header">
-                            <span class="project-label" data-i18n="project.vertem.label">Vertem</span>
-                            <h3 data-i18n="project.vertem.title">Barramento Financeiro &amp; Marketplace</h3>
-                        </div>
-                        <p data-i18n="project.vertem.body">Suite de microservices para processar Pix, boletos e recompensas, conectando plataformas de pagamento e mensagerias em tempo real.</p>
-                        <ul class="project-tags">
-                            <li>.NET 8</li>
-                            <li>RabbitMQ</li>
-                            <li>PostgreSQL</li>
-                            <li>MongoDB</li>
-                            <li>Clean Architecture</li>
-                        </ul>
-                    </article>
-                    <article class="project-card" data-animate="fade-up" data-animate-delay="120">
-                        <div class="project-header">
-                            <span class="project-label" data-i18n="project.granito.label">Granito Pagamentos</span>
-                            <h3 data-i18n="project.granito.title">Plataforma de APIs Financeiras</h3>
-                        </div>
-                        <p data-i18n="project.granito.body">EvoluÃ§Ã£o de APIs RESTful e portais internos para gestÃ£o de operaÃ§Ãµes financeiras, garantindo seguranÃ§a e performance.</p>
-                        <ul class="project-tags">
-                            <li>.NET Framework</li>
-                            <li>.NET 6</li>
-                            <li>SQL Server</li>
-                            <li>Bootstrap</li>
-                            <li>Testes automatizados</li>
-                        </ul>
-                    </article>
-                    <article class="project-card" data-animate="fade-up" data-animate-delay="240">
-                        <div class="project-header">
-                            <span class="project-label" data-i18n="project.jotatei.label">Jotatei</span>
-                            <h3 data-i18n="project.jotatei.title">Aplicativos Web &amp; Mobile</h3>
-                        </div>
-                        <p data-i18n="project.jotatei.body">Ecossistema de aplicaÃ§Ãµes com .NET 6+, Xamarin e armazenamento em AWS, promovendo integraÃ§Ãµes seguras e experiÃªncia mobile consistente.</p>
-                        <ul class="project-tags">
-                            <li>.NET 6</li>
-                            <li>Xamarin</li>
-                            <li>Amazon S3</li>
-                            <li>APIs REST</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding" id="contact">
-            <div class="container">
-                <div class="section-heading" data-animate="fade-up">
-                    <span class="eyebrow" data-i18n="contact.eyebrow">Vamos construir algo</span>
-                    <h2 data-i18n="contact.title">Contato</h2>
-                    <p data-i18n="contact.description">Aberto a novos desafios em back end, integraÃ§Ãµes financeiras e soluÃ§Ãµes full stack.</p>
-                </div>
-                <div class="contact-panel" data-animate="fade-up">
-                    <div class="contact-grid">
-                        <a class="contact-item" href="https://api.whatsapp.com/send?phone=5511999070180" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i>
-                            <span data-i18n="contact.whatsapp.label">WhatsApp</span>
-                            <small>+55 11 99907-0180</small>
-                        </a>
-                        <a class="contact-item" href="mailto:guilhermeduarte14511@gmail.com">
-                            <i class="fas fa-envelope"></i>
-                            <span data-i18n="contact.email.label">E-mail</span>
-                            <small>guilhermeduarte14511@gmail.com</small>
-                        </a>
-                        <a class="contact-item" href="https://www.linkedin.com/in/guilherme-duarte-2253b0154/" target="_blank" rel="noopener">
-                            <i class="fab fa-linkedin"></i>
-                            <span data-i18n="contact.linkedin.label">LinkedIn</span>
-                            <small>/guilherme-duarte-2253b0154</small>
-                        </a>
-                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=5511999070180" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>
+                            <strong>WhatsApp</strong>
+                            +55 11 99907-0180
+                        </span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/guilherme-duarte-2253b0154/" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span>
+                            <strong>LinkedIn</strong>
+                            /guilherme-duarte-2253b0154
+                        </span>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p data-i18n="footer.copy">&copy; 2025 Guilherme Duarte. ConstruÃ­do com mindset .NET.</p>
-        </div>
-    </footer>
+    <button class="back-to-top" type="button" data-back-to-top aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-    <div class="chat-widget" id="chatWidget">
-        <button type="button"
-                class="chat-toggle"
-                data-chat-toggle
-                aria-expanded="false"
-                aria-controls="chatPanel"
-                aria-label="Abrir conversa"
-                data-open-label="Abrir conversa"
-                data-close-label="Fechar conversa">
-            <i class="fas fa-comments" aria-hidden="true"></i>
-            <span data-i18n="chat.toggle">Converse comigo</span>
-        </button>
-        <div class="chat-panel" id="chatPanel" data-chat-panel role="dialog" aria-labelledby="chatPanelTitle" hidden aria-hidden="true">
-            <div class="chat-panel__header">
-                <h3 id="chatPanelTitle" data-i18n="chat.title">Converse comigo</h3>
-                <button type="button"
-                        class="chat-panel__close"
-                        data-chat-close
-                        aria-label="Fechar conversa"
-                        data-i18n="chat.close"
-                        data-i18n-attr="aria-label">
-                    <i class="fas fa-times" aria-hidden="true"></i>
-                </button>
-            </div>
-            <p data-i18n="chat.description">Escolha o canal que preferir para iniciar uma conversa.</p>
-            <div class="chat-panel__actions">
-                <a class="chat-action"
-                   href="https://api.whatsapp.com/send?phone=5511999070180"
-                   target="_blank"
-                   rel="noopener">
-                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                    <span data-i18n="chat.whatsapp">Chamar no WhatsApp</span>
-                </a>
-                <a class="chat-action" href="mailto:guilhermeduarte14511@gmail.com">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <span data-i18n="chat.email">Enviar e-mail</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
