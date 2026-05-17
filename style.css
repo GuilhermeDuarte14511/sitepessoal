@@ -44,12 +44,19 @@ body.light-mode {
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
     margin: 0;
+    width: 100%;
+    max-width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: clip;
     background:
         linear-gradient(120deg, rgba(52, 211, 153, 0.07), transparent 32%),
         linear-gradient(260deg, rgba(56, 189, 248, 0.09), transparent 38%),
@@ -860,10 +867,14 @@ body.light-mode .site-header {
 
 .case-shell {
     position: relative;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .case-swiper {
-    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .case-card {
@@ -1331,7 +1342,7 @@ body.light-mode .case-details div {
 
 @media (max-width: 1080px) {
     .site-header {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: minmax(0, 1fr) auto auto;
         justify-content: space-between;
     }
 
@@ -1340,10 +1351,15 @@ body.light-mode .case-details div {
     }
 
     .site-nav {
-        position: absolute;
+        position: fixed;
         left: 12px;
         right: 12px;
-        top: calc(100% + 10px);
+        top: calc(var(--header-height) + 24px);
+        width: auto;
+        max-width: calc(100svw - 24px);
+        max-height: calc(100svh - var(--header-height) - 44px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
         display: none;
         flex-direction: column;
         align-items: stretch;
@@ -1360,6 +1376,7 @@ body.light-mode .case-details div {
 
     .site-nav a {
         padding: 12px 14px;
+        overflow-wrap: anywhere;
     }
 
     .header-cta span {
@@ -1407,7 +1424,7 @@ body.light-mode .case-details div {
 
 @media (max-width: 760px) {
     :root {
-        --container: min(1180px, calc(100vw - 28px));
+        --container: min(1180px, calc(100svw - 28px));
         --header-height: 70px;
     }
 
@@ -1416,14 +1433,28 @@ body.light-mode .case-details div {
     }
 
     .site-header {
-        width: calc(100vw - 18px);
+        left: max(9px, env(safe-area-inset-left));
+        right: max(9px, env(safe-area-inset-right));
+        width: auto;
         min-height: 64px;
+        transform: none;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        gap: 8px;
         padding: 10px;
         border-radius: 22px;
     }
 
     .brand {
         min-width: auto;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    .brand strong {
+        max-width: clamp(118px, 36vw, 160px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .brand small {
@@ -1447,6 +1478,15 @@ body.light-mode .case-details div {
     .menu-toggle {
         width: 40px;
         height: 40px;
+        flex: 0 0 auto;
+    }
+
+    .site-nav {
+        left: max(9px, env(safe-area-inset-left));
+        right: max(9px, env(safe-area-inset-right));
+        top: 82px;
+        max-width: calc(100svw - 18px);
+        border-radius: 18px;
     }
 
     .hero {
