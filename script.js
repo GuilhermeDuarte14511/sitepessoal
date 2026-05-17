@@ -5,6 +5,8 @@ const menuToggle = document.querySelector('[data-menu-toggle]');
 const themeToggle = document.getElementById('themeToggle');
 const backToTop = document.querySelector('[data-back-to-top]');
 const typedText = document.getElementById('typedText');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let lenisInstance;
 
 const specialties = [
     'serviços financeiros resilientes',
@@ -107,7 +109,75 @@ function initialiseTypewriter() {
         return;
     }
 
+    if (window.Typed && !prefersReducedMotion) {
+        new Typed('#typedText', {
+            strings: specialties,
+            typeSpeed: 36,
+            backSpeed: 20,
+            backDelay: 1450,
+            loop: true,
+            smartBackspace: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+        return;
+    }
+
     typedText.textContent = specialties[0];
+}
+
+function initialiseSmoothScroll() {
+    if (!window.Lenis || prefersReducedMotion) {
+        return;
+    }
+
+    lenisInstance = new Lenis({
+        duration: 1.05,
+        smoothWheel: true,
+        syncTouch: false,
+        wheelMultiplier: 0.95
+    });
+    window.portfolioLenis = lenisInstance;
+
+    lenisInstance.on('scroll', handleScrollState);
+
+    const raf = (time) => {
+        lenisInstance.raf(time);
+        requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+}
+
+function initialiseCaseSlider() {
+    const caseSwiper = document.querySelector('[data-case-swiper]');
+
+    if (!caseSwiper || !window.Swiper) {
+        return;
+    }
+
+    new Swiper(caseSwiper, {
+        slidesPerView: 1,
+        spaceBetween: 18,
+        speed: 650,
+        grabCursor: true,
+        keyboard: {
+            enabled: true
+        },
+        pagination: {
+            el: '.case-pagination',
+            clickable: true
+        },
+        navigation: {
+            nextEl: '.case-next',
+            prevEl: '.case-prev'
+        },
+        breakpoints: {
+            900: {
+                spaceBetween: 24
+            }
+        }
+    });
 }
 
 function initialiseActiveSections() {
@@ -148,6 +218,23 @@ function handleScrollState() {
     if (backToTop) {
         backToTop.classList.toggle('is-visible', window.scrollY > 650);
     }
+
+    updateTimelineProgress();
+}
+
+function updateTimelineProgress() {
+    const timeline = document.querySelector('.timeline');
+
+    if (!timeline) {
+        return;
+    }
+
+    const rect = timeline.getBoundingClientRect();
+    const total = Math.max(rect.height - window.innerHeight * 0.35, 1);
+    const current = -rect.top + window.innerHeight * 0.42;
+    const progress = Math.min(Math.max(current / total, 0), 1);
+
+    timeline.style.setProperty('--timeline-progress', progress.toFixed(3));
 }
 
 function initialiseScrollActions() {
@@ -156,17 +243,46 @@ function initialiseScrollActions() {
 
     if (backToTop) {
         backToTop.addEventListener('click', () => {
+            if (lenisInstance) {
+                lenisInstance.scrollTo(0);
+                return;
+            }
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 }
 
 function initialiseMotionEnhancements() {
-    if (!window.gsap || !window.ScrollTrigger || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (!window.gsap || !window.ScrollTrigger || prefersReducedMotion) {
         return;
     }
 
     gsap.registerPlugin(ScrollTrigger);
+
+    if (lenisInstance) {
+        lenisInstance.on('scroll', ScrollTrigger.update);
+    }
+
+    gsap.fromTo('.hero-copy > *', {
+        y: 24
+    }, {
+        y: 0,
+        duration: 0.72,
+        stagger: 0.08,
+        ease: 'power3.out'
+    });
+
+    gsap.fromTo('.hero-visual', {
+        y: 30,
+        scale: 0.97
+    }, {
+        y: 0,
+        scale: 1,
+        duration: 0.82,
+        delay: 0.12,
+        ease: 'power3.out'
+    });
 
     gsap.to('.mesh-one', {
         yPercent: 18,
@@ -192,7 +308,18 @@ function initialiseMotionEnhancements() {
         }
     });
 
-    gsap.utils.toArray('.stack-lane, .expertise-card, .project-panel').forEach((card) => {
+    gsap.to('.portrait-shell', {
+        yPercent: 7,
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+        }
+    });
+
+    gsap.utils.toArray('.stack-lane, .expertise-card, .project-panel, .help-card, .case-card').forEach((card) => {
         gsap.fromTo(card, {
             y: 24
         }, {
@@ -215,9 +342,11 @@ if (themeToggle) {
 }
 
 initialiseTheme();
+initialiseSmoothScroll();
 initialiseNavigation();
 initialiseReveal();
 initialiseTypewriter();
+initialiseCaseSlider();
 initialiseActiveSections();
 initialiseScrollActions();
 initialiseMotionEnhancements();

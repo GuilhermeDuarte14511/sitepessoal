@@ -6,11 +6,20 @@
     <title>Guilherme Duarte de Oliveira | Desenvolvedor .NET Pleno</title>
     <meta name="description" content="Portfólio de Guilherme Duarte de Oliveira, Desenvolvedor Full Stack .NET Pleno com experiência em APIs, serviços financeiros, Pix, webhooks, cloud, mensageria e Xamarin.">
     <meta name="theme-color" content="#07111f">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Guilherme Duarte de Oliveira | Desenvolvedor .NET Pleno">
+    <meta property="og:description" content="APIs .NET, integrações financeiras, Pix, webhooks, cloud, mensageria e produtos digitais.">
+    <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4D03AQGPdHOXKpKXDQ/profile-displayphoto-scale_400_400/B4DZ10oyLMG8Ag-/0/1775778343864?e=1780531200&amp;v=beta&amp;t=37pU0vl4jZmVKkSsIbyFPRioqFTP5zTEjQ7WyWSqPR8">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guilherme Duarte de Oliveira | Desenvolvedor .NET Pleno">
+    <meta name="twitter:description" content="Portfólio profissional com experiência em .NET, Pix, webhooks, marketplace, APIs e cloud.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,8 +41,11 @@
             <a href="#impacto">Impacto</a>
             <a href="#experiencia">Experiência</a>
             <a href="#especialidades">Especialidades</a>
+            <a href="#cases">Cases</a>
             <a href="#projetos">Projetos</a>
+            <a href="#ajuda">Ajuda</a>
             <a href="#formacao">Formação</a>
+            <a href="#english">EN</a>
             <a href="#contato">Contato</a>
         </nav>
 
@@ -77,6 +89,10 @@
                         <a class="button button-secondary" href="https://www.linkedin.com/in/guilherme-duarte-2253b0154/" target="_blank" rel="noopener">
                             <i class="fa-brands fa-linkedin-in"></i>
                             Ver LinkedIn
+                        </a>
+                        <a class="button button-secondary" href="assets/Guilherme-Duarte-Oliveira-Curriculo.pdf" download>
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            Baixar currículo
                         </a>
                     </div>
 
@@ -358,11 +374,11 @@
             </div>
         </section>
 
-        <section class="section stack-lab-section">
+        <section class="section stack-lab-section" id="resumo-tecnico">
             <div class="section-heading" data-reveal>
-                <div class="section-kicker">Stack em contexto</div>
-                <h2>Não é só lista de tecnologia. É como elas entram no produto.</h2>
-                <p>Organizo a stack por responsabilidade: construir, integrar, armazenar, entregar e manter.</p>
+                <div class="section-kicker">Resumo técnico</div>
+                <h2>Stack agrupada pelo uso real no produto.</h2>
+                <p>Organizo a stack por responsabilidade: construir, integrar, armazenar, entregar e manter sistemas em produção.</p>
             </div>
 
             <div class="stack-lab">
@@ -386,6 +402,99 @@
                     <h3>Entrega</h3>
                     <p>Amazon S3, Azure DevOps, Docker, Kubernetes, versionamento e automação para ambientes produtivos.</p>
                 </article>
+            </div>
+        </section>
+
+        <section class="section cases-section" id="cases">
+            <div class="section-heading align-left" data-reveal>
+                <div class="section-kicker">Cases profissionais</div>
+                <h2>Problemas reais, entregas técnicas e impacto de produto.</h2>
+                <p>Cada frente resume experiências aplicadas em produtos financeiros, marketplace e integrações cloud, sem expor dados sensíveis das empresas.</p>
+            </div>
+
+            <div class="case-shell" data-reveal>
+                <div class="swiper case-swiper" data-case-swiper>
+                    <div class="swiper-wrapper">
+                        <article class="swiper-slide case-card">
+                            <span class="case-number">Case 01</span>
+                            <h3>Pix, webhooks e validações</h3>
+                            <div class="case-details">
+                                <div>
+                                    <strong>Contexto</strong>
+                                    <p>Produtos financeiros com fluxos críticos de pagamento, confirmação, cancelamento e retorno entre sistemas.</p>
+                                </div>
+                                <div>
+                                    <strong>Desafio</strong>
+                                    <p>Manter regras consistentes, tratar exceções e garantir rastreabilidade em integrações sensíveis a tempo e estado.</p>
+                                </div>
+                                <div>
+                                    <strong>Tecnologias</strong>
+                                    <p>.NET, APIs RESTful, webhooks, SQL Server, MySQL, RabbitMQ, SQS e Postman.</p>
+                                </div>
+                                <div>
+                                    <strong>Resultado</strong>
+                                    <p>Fluxos mais confiáveis para operação financeira, com melhor manutenção, diagnóstico e evolução das integrações.</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="swiper-slide case-card">
+                            <span class="case-number">Case 02</span>
+                            <h3>Marketplace e e-commerce</h3>
+                            <div class="case-details">
+                                <div>
+                                    <strong>Contexto</strong>
+                                    <p>Ambientes de marketplace conectando produtos, pedidos, pagamentos, parceiros e sistemas internos.</p>
+                                </div>
+                                <div>
+                                    <strong>Desafio</strong>
+                                    <p>Integrar plataformas diferentes sem perder consistência de dados, disponibilidade e clareza operacional.</p>
+                                </div>
+                                <div>
+                                    <strong>Tecnologias</strong>
+                                    <p>.NET Framework, .NET 6+, APIs, SQL Server, MySQL, front-end web e mensageria.</p>
+                                </div>
+                                <div>
+                                    <strong>Resultado</strong>
+                                    <p>Serviços preparados para sustentar jornadas comerciais, comunicação entre sistemas e manutenção evolutiva.</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="swiper-slide case-card">
+                            <span class="case-number">Case 03</span>
+                            <h3>APIs e integrações cloud</h3>
+                            <div class="case-details">
+                                <div>
+                                    <strong>Contexto</strong>
+                                    <p>Sistemas web e mobile consumindo serviços back-end, armazenando arquivos e sincronizando informações.</p>
+                                </div>
+                                <div>
+                                    <strong>Desafio</strong>
+                                    <p>Criar contratos simples, manter integrações legíveis e apoiar sistemas em produção com boa rastreabilidade.</p>
+                                </div>
+                                <div>
+                                    <strong>Tecnologias</strong>
+                                    <p>.NET 6+, Amazon S3, Azure DevOps, Docker, Kubernetes, Xamarin, HTML, CSS e JavaScript.</p>
+                                </div>
+                                <div>
+                                    <strong>Resultado</strong>
+                                    <p>APIs e integrações mais fáceis de evoluir, conectando back-end, nuvem, front-end e mobile no mesmo fluxo.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="case-controls" aria-label="Controles dos cases">
+                    <button class="case-button case-prev" type="button" aria-label="Case anterior">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <div class="case-pagination"></div>
+                    <button class="case-button case-next" type="button" aria-label="Próximo case">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -484,6 +593,37 @@
             </div>
         </section>
 
+        <section class="section help-section" id="ajuda">
+            <div class="section-heading align-left" data-reveal>
+                <div class="section-kicker">Como posso ajudar</div>
+                <h2>Atuação pronta para times que precisam evoluir sistemas reais.</h2>
+                <p>Meu foco é entrar em contextos com regra de negócio, integração e operação, entendendo o que existe e melhorando sem quebrar o fluxo.</p>
+            </div>
+
+            <div class="help-grid">
+                <article class="help-card" data-reveal>
+                    <i class="fa-solid fa-code-branch"></i>
+                    <h3>Back-end .NET</h3>
+                    <p>Criação, manutenção e evolução de APIs, serviços, MVC e integrações com regras críticas.</p>
+                </article>
+                <article class="help-card" data-reveal>
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <h3>Integrações financeiras</h3>
+                    <p>Fluxos com Pix, webhooks, validações, cancelamentos, eventos e comunicação assíncrona.</p>
+                </article>
+                <article class="help-card" data-reveal>
+                    <i class="fa-solid fa-store"></i>
+                    <h3>Marketplace e e-commerce</h3>
+                    <p>APIs e serviços para conectar pedidos, pagamentos, parceiros, plataformas e dados operacionais.</p>
+                </article>
+                <article class="help-card" data-reveal>
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <h3>Sustentação evolutiva</h3>
+                    <p>Correções, melhorias, leitura de legado, documentação e evolução segura de sistemas em produção.</p>
+                </article>
+            </div>
+        </section>
+
         <section class="section education-section" id="formacao">
             <div class="section-heading" data-reveal>
                 <div class="section-kicker">Formação</div>
@@ -509,6 +649,27 @@
                         <strong>HTML e CSS Web</strong>
                         <span>Abril/2023</span>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section english-section" id="english">
+            <div class="english-panel" data-reveal>
+                <div>
+                    <div class="section-kicker">English version</div>
+                    <h2>Full Stack .NET Developer focused on APIs, financial integrations and cloud-enabled products.</h2>
+                </div>
+                <div class="english-copy">
+                    <p>
+                        I build and maintain .NET services, REST APIs and integrations for financial products, marketplaces and operational systems.
+                    </p>
+                    <p>
+                        My recent work includes Pix flows, webhooks, validations, cancellations, messaging with RabbitMQ/SQS, relational databases, Amazon S3, Azure DevOps, Docker and Kubernetes.
+                    </p>
+                    <a class="button button-secondary" href="assets/Guilherme-Duarte-Oliveira-Curriculo.pdf" download>
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        Download resume
+                    </a>
                 </div>
             </div>
         </section>
@@ -543,6 +704,13 @@
                             /guilherme-duarte-2253b0154
                         </span>
                     </a>
+                    <a href="assets/Guilherme-Duarte-Oliveira-Curriculo.pdf" download>
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        <span>
+                            <strong>Currículo</strong>
+                            Baixar PDF atualizado
+                        </span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -554,6 +722,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.16/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
