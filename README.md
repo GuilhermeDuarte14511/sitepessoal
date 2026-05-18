@@ -1,21 +1,22 @@
 # Guilherme Duarte de Oliveira - Portfólio .NET
 
-Portfólio pessoal de Guilherme Duarte de Oliveira, Desenvolvedor Full Stack .NET Pleno, com foco em APIs, serviços financeiros, Pix, webhooks, mensageria, cloud, e-commerce/marketplace e desenvolvimento mobile com Xamarin.
+Portfólio pessoal de Guilherme Duarte de Oliveira, Desenvolvedor Full Stack .NET Pleno, com foco em APIs, serviços financeiros, .NET 8, .NET 9, .NET 10, IA aplicada à melhoria de código e arquitetura, Pix, webhooks, mensageria, cloud, e-commerce/marketplace e desenvolvimento mobile com Xamarin.
 
 ## Visão Geral
 
-O site apresenta uma narrativa profissional mais completa e atualizada:
+O site apresenta uma narrativa profissional mais completa, editorial e menos genérica:
 
-- Hero moderno com posicionamento claro, foto, CTAs e resumo de atuação.
-- Seção Sobre com texto editorial baseado no currículo.
+- Hero autoral com posicionamento claro: backend .NET para integrações que precisam continuar funcionando depois do deploy.
+- Seção Sobre com texto mais humano, conectando suporte, dados, full stack, back-end e produção.
+- Notas de campo para mostrar experiência real com webhooks, legado, operação e IA aplicada com critério.
 - Seção de impacto com evolução desde suporte, dados e desenvolvimento até atuação plena em produtos financeiros.
 - Linha do tempo com Vertem, Inter Pag e Jotatei.
 - Linha do tempo expandida com Track&Field e suporte técnico, preservando a trajetória completa.
-- Especialidades organizadas por back-end, dados, mensageria, cloud, front-end, mobile, colaboração e entregas práticas.
-- Cases profissionais com contexto, desafio, tecnologias e resultado.
+- Especialidades organizadas por valor profissional, em layout mais editorial e menos dependente de cards.
+- Cases profissionais com narrativa de problema, risco, atuação, resultado e stack aplicada.
 - Projetos/frentes de impacto em Pix, webhooks, marketplace e Xamarin.
-- Resumo técnico para mostrar como as tecnologias entram no produto.
-- Seção "Como posso ajudar" para apresentar frentes de atuação.
+- Resumo técnico por responsabilidade: construir, integrar, persistir, entregar, sustentar e evoluir com IA.
+- Seção "Como posso ajudar" para apresentar frentes de atuação em times reais.
 - Versão curta em inglês e botão para baixar currículo em PDF.
 - Metatags Open Graph/Twitter para compartilhamento em WhatsApp, LinkedIn e redes sociais.
 - Formação acadêmica e cursos complementares.

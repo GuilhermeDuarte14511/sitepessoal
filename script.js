@@ -9,11 +9,11 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 let lenisInstance;
 
 const specialties = [
-    'serviços financeiros resilientes',
-    'APIs RESTful com .NET 6+',
-    'Pix, webhooks e validações',
-    'RabbitMQ, SQS e cloud',
-    'front-end responsivo e Xamarin'
+    'backend .NET em produção',
+    'APIs com .NET 8, 9 e 10',
+    'Pix, webhooks e status confiável',
+    'IA para revisar decisões técnicas',
+    'legado evoluindo sem parar operação'
 ];
 
 function setTheme(mode) {
